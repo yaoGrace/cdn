@@ -12,46 +12,40 @@
 
 </head>
 <body>
- 
- 
-<div class="layui-card">
-  <div class="layui-card-header">按钮面板</div>
-  <div class="layui-card-body">
-    <div class="layui-btn-container">
-        <button type="button" class="layui-btn layui-btn-primary">原始按钮</button>
-        <button type="button" class="layui-btn">默认按钮</button>
-        <button type="button" class="layui-btn layui-btn-normal">百搭按钮</button>
-        <button type="button" class="layui-btn layui-btn-warm">暖色按钮</button>
-        <button type="button" class="layui-btn layui-btn-danger">警告按钮</button>
-        <button type="button" class="layui-btn layui-btn-disabled">禁用按钮</button>
-      </div>
-  </div>
-</div>
- 
-
-<div class="layui-card">
-  <div class="layui-card-header">选项卡</div>
-  <div class="layui-card-body">
-        <div class="layui-tab layui-tab-brief">
-            <ul class="layui-tab-title">
-                <li class="layui-this">网站设置</li>
-                <li>用户管理</li>
-                <li>权限分配</li>
-                <li>商品管理</li>
-                <li>订单管理</li>
-            </ul>
-            <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">内容1</div>
-                <div class="layui-tab-item">内容2</div>
-                <div class="layui-tab-item">内容3</div>
-                <div class="layui-tab-item">内容4</div>
-                <div class="layui-tab-item">内容5</div>
+<div class="layui-fluid">
+    <div class="layui-container"> 
+        <div class="layui-row">
+            <div class="layui-col-md12">
+              <span>cdn项目</span>
+            </div> 
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">选项卡</div>
+                    <div class="layui-card-body">
+                            <div class="layui-tab layui-tab-brief">
+                                <ul class="layui-tab-title">
+                                    <li class="layui-this">网站设置</li>
+                                    <li>用户管理</li>
+                                    <li>权限分配</li>
+                                    <li>商品管理</li>
+                                    <li>订单管理</li>
+                                </ul>
+                                <div class="layui-tab-content">
+                                    <div class="layui-tab-item layui-show">内容1</div>
+                                    <div class="layui-tab-item">内容2</div>
+                                    <div class="layui-tab-item">内容3</div>
+                                    <div class="layui-tab-item">内容4</div>
+                                    <div class="layui-tab-item">内容5</div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
             </div>
-        </div>
-  </div>
-</div>
+          </div>
+    </div>
+   
 
-
+</div>      
 <script>
 //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
 layui.use('element', function(){
