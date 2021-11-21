@@ -1,4 +1,7 @@
 # CDNStatics
+
+*** 具体明细看 ：https://yaograce.github.io/CdnStatics/  
+
 ```html
 此项目是CDN项目
 用于CDN 加速 
