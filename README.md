@@ -8,10 +8,10 @@ https://cdn.jsdelivr.net/gh/用户名/项目名/文件名
 
 ```
 
-###现在已经使用的cdn加速
+### 现在已经使用的cdn加速
 
-``
-图片j加速：
+```
+图片加速：
 https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/cdnImgs/phpgrace/trace.png
 
 
