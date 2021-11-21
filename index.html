@@ -1,11 +1,622 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>必备 · 命令行</title>
+<meta name="keywords" content="phpGrace 命令行工具" />
+<meta name="description" content="phpGrace 命令行工具" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1635485_6pybw0sb04o.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/layui/v2.6.8/css/layui.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/grace/grace.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/jquery3.5.1/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/layui/v2.6.8/layui.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/grace/grace.js"></script>
 </head>
 <body>
-    我是首页
-</body>
+<div class="gui-header">
+	<div class="gui-body" style="overflow:visible;">
+		<a href="/" class="gui-logo gui-fl"><img src="https://cmsuse.oss-cn-beijing.aliyuncs.com/statics/images/202106/60c02a86e81c5.png" style="margin-top:5px;" /></a>
+		<div class="gui-nav" id="gui-nav">
+            			<a href="/doc/index/52-3100-28.html" target="_self" id="nav7">开发文档</a>
+            			<a href="/article" target="_self" id="nav2">资讯·分享</a>
+            			<a href="/topics" target="_self" id="nav6">技术交流</a>
+            						<a href="/login">会员登录</a>
+					</div>
+	</div>
+	<div class="gui-nav-menu gscmsfont icon-menu gui-fr gui-color-main" id="gui-nav-menu"></div>
+</div>
+<div class="gui-header-line"></div>
+<div class="gui-slide-menu" id="slide-menu-account">
+	<a href="/account">账户中心</a>
+	<a href="/index/logoff">退出系统</a>
+</div>
+<div class="gui-shade"></div>
+<div class="gui-drawer" id="gui-drawer">
+            <a href="/doc/index/52-3100-28.html" target="_self" id="nav7">开发文档</a>
+            <a href="/article" target="_self" id="nav2">资讯·分享</a>
+            <a href="/topics" target="_self" id="nav6">技术交流</a>
+    		<a href="/login">会员登录</a>
+	</div>
+<!-- 动态二级导航 -->
+<div class="gui-slide-menu" id="slide-menu-fornav7">
+        <a href="/doc/index/52-3100-28.html" target="_self" id="nav11">phpGrace</a>
+        <a href="/doc/index/27-1100-13.html" target="_self" id="nav10">GSCMS</a>
+        <a href="/doc/index/118-5100-38.html?code=5102" target="_self" id="nav12">公众号系统</a>
+    </div>
+<script type="text/javascript">
+$(function(){
+        $('#nav7').slideMenu('#slide-menu-fornav7');
+    	if($('#nav-account').length > 0){$('#nav-account').slideMenu('#slide-menu-account');}
+	$('#gui-nav-menu').click(function(){
+	    $('.gui-header').addClass('gui-no-shadow');
+		$('.gui-shade').fadeIn(200);
+		$('#gui-drawer').fadeIn(200);
+		$('.gui-shade').click(function(){
+			$('.gui-shade').fadeOut(200);
+			$('#gui-drawer').fadeOut(200);
+            $('.gui-header').removeClass('gui-no-shadow');
+		});
+	});
+});
+</script><div class="gui-body">
+	<div class="gui-fl gui-doc-menu gui-h5-hide gui-h5-float-none">
+    <div id="doc-search">
+        <input type="text" id="msearchKey" placeholder="搜索" value="" />
+        <div id="doc-search-icon" class="gscmsfont icon-sousuo"></div>
+    </div>
+    <div class="gui-accordion" id="gui-accordion">
+                <dl id="gui-accordion-dl3100">
+            <dt>
+                <span class="gscmsfont icon-jieshao"></span>框架基础                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/52-3100-28.html?code=3105"
+                   id="doc-menu-52-3100-28">
+                    框架介绍                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/53-3100-28.html?code=3110"
+                   id="doc-menu-53-3100-28">
+                    环境 · 伪静态                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/163-3100-28.html?code=3113"
+                   id="doc-menu-163-3100-28">
+                    必备 · 命令行                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/54-3100-28.html?code=3115"
+                   id="doc-menu-54-3100-28">
+                    目录 · 站点                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/164-3100-28.html?code=3116"
+                   id="doc-menu-164-3100-28">
+                    目录 · 分组                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/55-3100-28.html?code=3120"
+                   id="doc-menu-55-3100-28">
+                    运行 · 调试 · 异常                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/63-3100-28.html?code=3130"
+                   id="doc-menu-63-3100-28">
+                    应用配置                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/56-3100-28.html?code=3143"
+                   id="doc-menu-56-3100-28">
+                    内置常量                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/168-3100-28.html?code=3145"
+                   id="doc-menu-168-3100-28">
+                    命名规范                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/83-3100-28.html?code=3150"
+                   id="doc-menu-83-3100-28">
+                    多语言                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3200">
+            <dt>
+                <span class="gscmsfont icon-bushu"></span>控制器                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/57-3200-28.html?code=3205"
+                   id="doc-menu-57-3200-28">
+                    创建控制器                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/59-3200-28.html?code=3215"
+                   id="doc-menu-59-3200-28">
+                    URL 解析                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/58-3200-28.html?code=3216"
+                   id="doc-menu-58-3200-28">
+                    资源方法                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/61-3200-28.html?code=3225"
+                   id="doc-menu-61-3200-28">
+                    URL 生成                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/62-3200-28.html?code=3230"
+                   id="doc-menu-62-3200-28">
+                    调用控制器                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/169-3200-28.html?code=3235"
+                   id="doc-menu-169-3200-28">
+                    依赖注入                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3250">
+            <dt>
+                <span class="gscmsfont icon-m-luyou"></span>路由                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/60-3250-28.html?code=3251"
+                   id="doc-menu-60-3250-28">
+                    路由配置                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/165-3250-28.html?code=3253"
+                   id="doc-menu-165-3250-28">
+                    路由拦截                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3270">
+            <dt>
+                <span class="gscmsfont icon-view"></span>视图                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/72-3270-28.html?code=3271"
+                   id="doc-menu-72-3270-28">
+                    视图基础                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/166-3270-28.html?code=3273"
+                   id="doc-menu-166-3270-28">
+                    静态资源                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/167-3270-28.html?code=3275"
+                   id="doc-menu-167-3270-28">
+                    深入视图                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3280">
+            <dt>
+                <span class="gscmsfont icon-bj-tjhz"></span>请求与响应                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/170-3280-28.html?code=3281"
+                   id="doc-menu-170-3280-28">
+                    请求信息                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/171-3280-28.html?code=3285"
+                   id="doc-menu-171-3280-28">
+                    响应输出                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/172-3280-28.html?code=3287"
+                   id="doc-menu-172-3280-28">
+                    输出JSON                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/173-3280-28.html?code=3289"
+                   id="doc-menu-173-3280-28">
+                    文件下载                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3290">
+            <dt>
+                <span class="gscmsfont icon-daibanshixiang"></span>提交与验证                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/114-3290-28.html?code=3291"
+                   id="doc-menu-114-3290-28">
+                    数据提交                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/88-3290-28.html?code=3292"
+                   id="doc-menu-88-3290-28">
+                    数据验证类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/115-3290-28.html?code=3293"
+                   id="doc-menu-115-3290-28">
+                    session令牌                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3300">
+            <dt>
+                <span class="gscmsfont icon-shujuku-01"></span>数据库操作                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/64-3300-28.html?code=3305"
+                   id="doc-menu-64-3300-28">
+                    完成配置                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/65-3300-28.html?code=3310"
+                   id="doc-menu-65-3300-28">
+                    操作对象                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/66-3300-28.html?code=3315"
+                   id="doc-menu-66-3300-28">
+                    准备工作                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/174-3300-28.html?code=3316"
+                   id="doc-menu-174-3300-28">
+                    插入数据                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/175-3300-28.html?code=3317"
+                   id="doc-menu-175-3300-28">
+                    删除数据                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/176-3300-28.html?code=3318"
+                   id="doc-menu-176-3300-28">
+                    设置条件                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/178-3300-28.html?code=3319"
+                   id="doc-menu-178-3300-28">
+                    更新数据                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/177-3300-28.html?code=3320"
+                   id="doc-menu-177-3300-28">
+                    查询数据                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/179-3300-28.html?code=3321"
+                   id="doc-menu-179-3300-28">
+                    查询修饰                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/180-3300-28.html?code=3322"
+                   id="doc-menu-180-3300-28">
+                    查询运算                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/70-3300-28.html?code=3323"
+                   id="doc-menu-70-3300-28">
+                    多表联合                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/69-3300-28.html?code=3330"
+                   id="doc-menu-69-3300-28">
+                     查询分页                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/71-3300-28.html?code=3338"
+                   id="doc-menu-71-3300-28">
+                    事务处理                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/67-3300-28.html?code=3340"
+                   id="doc-menu-67-3300-28">
+                    其他常用                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3350">
+            <dt>
+                <span class="gscmsfont icon-shujumoxing"></span>模型机制                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/81-3350-28.html?code=3351"
+                   id="doc-menu-81-3350-28">
+                    模型机制                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/82-3350-28.html?code=3352"
+                   id="doc-menu-82-3350-28">
+                    模型总结                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3400">
+            <dt>
+                <span class="gscmsfont icon-huancun"></span>缓存机制                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/75-3400-28.html?code=3401"
+                   id="doc-menu-75-3400-28">
+                    缓存概述                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/76-3400-28.html?code=3405"
+                   id="doc-menu-76-3400-28">
+                    控制器使用缓存示例                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/77-3400-28.html?code=3410"
+                   id="doc-menu-77-3400-28">
+                    模型中使用缓存示例                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/78-3400-28.html?code=3415"
+                   id="doc-menu-78-3400-28">
+                    删除及清空缓存                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/181-3400-28.html?code=3418"
+                   id="doc-menu-181-3400-28">
+                    redis 形式的缓存                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3500">
+            <dt>
+                <span class="gscmsfont icon-moxing1"></span>会话机制                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/79-3500-28.html?code=3505"
+                   id="doc-menu-79-3500-28">
+                    cookie 操作                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/80-3500-28.html?code=3510"
+                   id="doc-menu-80-3500-28">
+                    session 操作                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3600">
+            <dt>
+                <span class="gscmsfont icon-gongjulei216"></span>内置工具库                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/84-3600-28.html?code=3601"
+                   id="doc-menu-84-3600-28">
+                    工具类库介绍                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/98-3600-28.html?code=3602"
+                   id="doc-menu-98-3600-28">
+                    使用 Composer                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/85-3600-28.html?code=3603"
+                   id="doc-menu-85-3600-28">
+                    阿里云静态云存储接口                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/86-3600-28.html?code=3606"
+                   id="doc-menu-86-3600-28">
+                    阿里云验证短信发送类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/87-3600-28.html?code=3608"
+                   id="doc-menu-87-3600-28">
+                    curl 请求                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/89-3600-28.html?code=3612"
+                   id="doc-menu-89-3600-28">
+                    文件夹操作                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/105-3600-28.html?code=3613"
+                   id="doc-menu-105-3600-28">
+                    文件上传类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/91-3600-28.html?code=3618"
+                   id="doc-menu-91-3600-28">
+                    数值转文本金额                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/92-3600-28.html?code=3620"
+                   id="doc-menu-92-3600-28">
+                    图片处理类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/93-3600-28.html?code=3622"
+                   id="doc-menu-93-3600-28">
+                    IP 地址获取                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/94-3600-28.html?code=3625"
+                   id="doc-menu-94-3600-28">
+                    SMTP 邮件发送工具                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/95-3600-28.html?code=3628"
+                   id="doc-menu-95-3600-28">
+                    md5 操作                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/96-3600-28.html?code=3630"
+                   id="doc-menu-96-3600-28">
+                    分词工具类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/97-3600-28.html?code=3632"
+                   id="doc-menu-97-3600-28">
+                    Execl 工具类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/99-3600-28.html?code=3635"
+                   id="doc-menu-99-3600-28">
+                    PDF 生成工具类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/100-3600-28.html?code=3638"
+                   id="doc-menu-100-3600-28">
+                    word 生成工具类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/101-3600-28.html?code=3650"
+                   id="doc-menu-101-3600-28">
+                    汉字转拼音工具                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/102-3600-28.html?code=3652"
+                   id="doc-menu-102-3600-28">
+                    二维码生成工具                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/103-3600-28.html?code=3655"
+                   id="doc-menu-103-3600-28">
+                    日期时间操作                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/109-3600-28.html?code=3657"
+                   id="doc-menu-109-3600-28">
+                    分类树操作类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/106-3600-28.html?code=3660"
+                   id="doc-menu-106-3600-28">
+                    图片验证码绘制类                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/107-3600-28.html?code=3665"
+                   id="doc-menu-107-3600-28">
+                    QQ 第三方登录 [ web 端 ]                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/108-3600-28.html?code=3668"
+                   id="doc-menu-108-3600-28">
+                    微信扫码登录 [ web 端 ]                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/110-3600-28.html?code=3670"
+                   id="doc-menu-110-3600-28">
+                    XML 操作工具                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3650">
+            <dt>
+                <span class="gscmsfont icon-x_kuozhan"></span>扩展及部件                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/182-3650-28.html?code=3651"
+                   id="doc-menu-182-3650-28">
+                    自定义类库                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/183-3650-28.html?code=3653"
+                   id="doc-menu-183-3650-28">
+                    视图小部件                </a>
+            </dd>
+                    </dl>
+                <dl id="gui-accordion-dl3900">
+            <dt>
+                <span class="gscmsfont icon-anquan"></span>项目部署                <div class="gscmsfont gui-accordion-arrow icon-jiantou-down"></div>
+            </dt>
+                        <dd>
+                <a href="/doc/index/111-3900-28.html?code=3901"
+                   id="doc-menu-111-3900-28">
+                    单服务器部署                </a>
+            </dd>
+                        <dd>
+                <a href="/doc/index/117-3900-28.html?code=3920"
+                   id="doc-menu-117-3900-28">
+                    分布式部署                </a>
+            </dd>
+                    </dl>
+            </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#doc-menu-163-3100-28').addClass('gui-current');
+	var index = $('#doc-menu-163-3100-28').parent().parent().index();
+	$('#gui-accordion').guiAccordion(index);
+    $("#msearchKey").keypress(function(e){
+        if(e.which == 13) {
+            var kwd = $(this).val();
+            location.href="/doc/search/28/"+kwd;
+        }
+    });
+});
+</script>	<div class="gui-common-right-body gui-fr gui-h5-float-none gui-margin-top gui-doc-body">
+        <div class="gui-manual-title">
+            <div class="gui-manual-title-text gui-color-blue">必备 · 命令行</div>
+        </div>
+		<div class="gui-common-content gui-margin-top-larger">
+		<h3>命令行工具</h3><blockquote>phpGrace 需要命令行形式来实现初始化站点、创建控制器、模型等等自动化工作。所以在开始前请保证您的 php 已被添加至环境变量。</blockquote><h3>将 php 添加至环境变量</h3><h4>1 windows</h4><pre class="brush:html;toolbar:false">1&nbsp;确认&nbsp;php&nbsp;安装文件位置;
+2&nbsp;我的电脑右键&nbsp;&nbsp;&gt;&nbsp;属性&nbsp;&gt;&nbsp;高级&nbsp;&gt;&nbsp;环境变量设置
+3&nbsp;点击&nbsp;path&nbsp;添加&nbsp;php&nbsp;安装目录/bin&nbsp;目录到环境变量
+4&nbsp;测试&nbsp;:&nbsp;
+命令行输入&nbsp;php&nbsp;-v,&nbsp;返回&nbsp;php&nbsp;版本信息代表环境变量设置成功~</pre><h4>2 macOS</h4><pre>#&nbsp;以下操作基于命令终端
+
+1&nbsp;查询系统环境变量文件位置
+echo&nbsp;$SHELL
+返回&nbsp;如&nbsp;:&nbsp;/bin/zsh&nbsp;可以看出
+
+2&nbsp;添加&nbsp;php&nbsp;到环境变量
+vim&nbsp;~/.zshrc
+添加&nbsp;:
+export&nbsp;PATH=&quot;/Applications/phpstudy/Extensions/php/php7.3.11/bin:$PATH&quot;
+注意&nbsp;:&nbsp;php&nbsp;的&nbsp;bin&nbsp;目录具体位置按您的实际安装位置填写
+
+3&nbsp;刷新环境变量使其生效
+source&nbsp;~/.zshrc
+
+4&nbsp;测试命令
+php&nbsp;-v
+返回&nbsp;php&nbsp;版本信息代表环境变量设置成功&nbsp;~</pre><h3>使用终端</h3><p>您可以通过各类终端工具使用 grace 命令，更推荐您在编辑器内置终端内使用 grace 命令。</p><h3>phpGrace 命令列表</h3><pre class="brush:bash;toolbar:false">//&nbsp;注意在项目根目录下使用下面的命令
+创建新站点&nbsp;:&nbsp;php&nbsp;grace&nbsp;cw&nbsp;站点名称
+重构伪静态&nbsp;:&nbsp;php&nbsp;grace&nbsp;cht&nbsp;站点名称
+创建新分组&nbsp;:&nbsp;php&nbsp;grace&nbsp;cg&nbsp;分组名称&nbsp;in&nbsp;站点名称
+创建控制器&nbsp;:&nbsp;php&nbsp;grace&nbsp;cc&nbsp;控制器名称&nbsp;站点或分组
+创建新模型&nbsp;:&nbsp;php&nbsp;grace&nbsp;cm&nbsp;模型名称
+创建小部件&nbsp;:&nbsp;php&nbsp;grace&nbsp;cwt&nbsp;部件名称
+创建演示数据表&nbsp;:&nbsp;php&nbsp;grace&nbsp;cdt</pre><p>通过上面的命令，您就可以快速的实现 命令方式 创建分组、控制器、模型文件。<br/></p>		</div>
+	</div>
+</div>
+<div class="gui-fixed-btn gscmsfont icon-mulu gui-bg-blue" style="color:#FFFFFF;"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/clipboard/clipboard.min.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<style>
+.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{padding:13px;}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}
+.copy span{color:#FFFFFF !important;}
+</style>
+<script type="text/javascript">
+$(function(){
+    $('#nav7').addClass('gui-current');
+	$('.gui-fixed-btn').click(function () {
+	    $('.gui-body:last').css({padding:0});
+		$('.gui-fixed-btn').hide();
+		$('.gui-doc-body').hide();
+		$('.gui-doc-menu').show();
+	});
+    $('pre').addClass('prettyprint');
+    prettyPrint();
+
+    setTimeout(function(){
+        var currentTop = $('#doc-menu-163-3100-28').offset();
+        var winHeight  = $(window).height();
+        if((currentTop.top + 200) > winHeight){
+            $('.gui-doc-menu').scrollTop(currentTop.top - winHeight / 2);
+        }
+    },300);
+});
+</script>
+<div class="gui-footer-line"></div>
+<div class="gui-footer" style="border-top:1px solid #E0E0E0;">
+	© 2018-2021 www.phpgrace.com	&nbsp;&nbsp;
+	<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">陕ICP备18004518号-1</a>
+    &nbsp;&nbsp;
+    <a href="http://www.phpgrace.com" target="_blank" class="gui-color-blue">访问旧版</a>
+</div>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- 遮罩层 -->
+ </body>
 </html>
