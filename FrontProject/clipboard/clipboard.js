@@ -8,7 +8,7 @@
 
 $(function(){ 
     $('pre').each(function(){
-        $('<div class="copy"><span class="layui-icon layui-icon-file-b"></span>复制</div>').appendTo($(this));
+        $('<div class="copy"><span class="gscmsfont icon-fuzhi"></span>复制</div>').appendTo($(this));
     });
     var clopyObj;
     var clipboard = new ClipboardJS('.copy', {
@@ -20,6 +20,6 @@ $(function(){
     });
     clipboard.on('success', function(e) {
         graceToast('复制成功 (:');
-        $('<div class="copy"><span class="layui-icon layui-icon-file-b"></span>复制</div>').appendTo(clopyObj);
+        $('<div class="copy"><span class="gscmsfont icon-fuzhi"></span>复制</div>').appendTo(clopyObj);
     }); 
 });
