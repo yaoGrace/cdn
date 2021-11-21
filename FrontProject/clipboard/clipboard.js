@@ -29,5 +29,5 @@ $(function(){
 
     $('table').each(function () {
         $(this).find('tr:even').css({background:'#F8F8F8'});
-    });
+    });  
 });
