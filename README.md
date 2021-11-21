@@ -14,5 +14,13 @@ https://cdn.jsdelivr.net/gh/用户名/项目名/文件名
 图片加速：
 https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/cdnImgs/phpgrace/trace.png
 
+```
 
+> **Layui框架CDN**
+
+```
+版本 v2.6.8 
+https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/layui/v2.6.8/layui.js
+
+https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/layui/v2.6.8/css/layui.css
 ```
