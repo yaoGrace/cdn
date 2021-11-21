@@ -10,7 +10,7 @@
 // 自定义代码
 $(function(){
     $('blockquote').addClass('gui-quote');
-    $('pre').addClass('prettyprint');
+    $('pre').addClass('prettyprint'); //添加样式
     $('pre').each(function(){
         $('<div class="copy"><span class="gscmsfont icon-fuzhi"></span>复制</div>').appendTo($(this));
     });
