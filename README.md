@@ -1,4 +1,4 @@
-# CDNStatics
+> **CDNStatics**
 
  具体明细看 ：https://yaograce.github.io/CdnStatics/  
 
