@@ -11,6 +11,12 @@ https://cdn.jsdelivr.net/gh/用户名/项目名/文件名
 
 ```
 
- 
+ > **目录结构**
+
+ ```
+ |--- cdnImgs           图片CDN
+ |--- FrontProject      前端CDN
+ |--- otherProject      其他CDN
+ ```
 
  
