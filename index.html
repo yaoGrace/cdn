@@ -12,6 +12,12 @@
     <script src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/layui/v2.6.8/layui.js"></script>
     <!-- 引入 clipboard 代码复制 -->
     <script src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/clipboard/clipboard.js"></script>
+    <!-- 引入代码高亮 -->
+    <script src="https://cdn.jsdelivr.net/gh/yaoGrace/CdnStatics/FrontProject/prettify/prettify.js"></script>
+    <style>
+        .pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{padding:13px;}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}
+        .copy span{color:#FFFFFF !important;}
+    </style>
 </head>
 <body>
 <div class="layui-fluid" style="margin-top: 20px;">
@@ -97,7 +103,13 @@
     </div>
    
 
-</div>      
+</div>   
+<script type="text/javascript">
+    $(function(){
+        $('pre').addClass('prettyprint');
+        prettyPrint();
+    });
+</script>   
 <script>
 //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
 layui.use('element', function(){
