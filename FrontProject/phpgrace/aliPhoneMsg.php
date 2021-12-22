@@ -31,7 +31,7 @@ class aliPhoneMsg {
 	    return $this->request(
 	        $this->accessKeyId,
 	        $this->accessKeySecret,
-	        "dysmsapi.aliyuncs.com",
+	        "dysmsapi.aliyuncs.com", 
 	        array_merge($params, array(
 	            "RegionId" => "cn-hangzhou",
 	            "Action" => "SendSms",
