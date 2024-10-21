@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpGrace 数据验证</title>
+<meta name="keywords" content="phpGrace 数据验证" />
+<meta name="description" content="phpGrace 数据验证" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-rows1 grace-l">
+		<div class="grace-accordion" id="grace-accordion">
+	<dl id="docdl-0">
+		<dt><span class="iconfont icon-kaishibaifang"></span>快速开始<i class="iconfont icon-jt-down"></i></dt>
+		<dd class="grace-mobile-hide"><a href="../../doc.html" id="doc-menu-0-0">框架介绍</a></dd>
+		<dd><a href="352-0.html" id="doc-menu-0-352">下载运行</a></dd>
+		<dd><a href="288-0.html" id="doc-menu-0-288">环境需求</a></dd>
+		<dd><a href="295-0.html" id="doc-menu-0-295">目录命名</a></dd>
+		<dd><a href="296-0.html" id="doc-menu-0-296">运行流程</a></dd>
+		<dd><a href="354-0.html" id="doc-menu-0-354">更新日志</a></dd>
+	</dl>
+	<dl id="docdl-99">
+		<dt><span class="iconfont icon-shipin"></span>视频教程<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="https://ke.qq.com/course/310478" target="_blank">腾讯课程</a></dd>
+		<dd><a href="https://pan.baidu.com/s/1DftW9G8XtuL_u4WvQY7wtA" target="_blank">百度网盘</a></dd>
+		<dd><a href="https://www.bilibili.com/video/BV1nr4y1y7NE/" target="_blank">B站播放</a></dd>
+	</dl>
+	<dl id="docdl-1">
+		<dt><span class="iconfont icon-inspur-link"></span>控制器与路由<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="297-1.html" id="doc-menu-1-297">创建控制器</a></dd>
+		<dd><a href="303-1.html" id="doc-menu-1-303">基础控制器</a></dd>
+		<dd><a href="298-1.html" id="doc-menu-1-298">url 解析规则</a></dd>
+		<dd><a href="299-1.html" id="doc-menu-1-299">自定义路由</a></dd>
+		<dd><a href="312-1.html" id="doc-menu-1-312">url 生成</a></dd>
+		<dd><a href="353-1.html" id="doc-menu-1-353">调用控制器</a></dd>
+	</dl>
+	<dl id="docdl-2">
+		<dt><span class="iconfont icon-shuju1"></span>数据与模型<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="300-2.html" id="doc-menu-2-300">配置数据库</a></dd>
+		<dd><a href="301-2.html" id="doc-menu-2-301">获取数据操作对象</a></dd>
+		<dd><a href="302-2.html" id="doc-menu-2-302">数据操作(CURD)</a></dd>
+		<dd><a href="349-2.html" id="doc-menu-2-349">数据分页详解</a></dd>
+		<dd><a href="327-2.html" id="doc-menu-2-327">事务操作</a></dd>
+		<dd><a href="305-2.html" id="doc-menu-2-305">数据验证</a></dd>
+		<dd><a href="322-2.html" id="doc-menu-2-322">表单令牌及验证</a></dd>
+		<dd><a href="304-2.html" id="doc-menu-2-304">模型创建与调用</a></dd>
+		<dd><a href="356-2.html" id="doc-menu-2-356">模型内缓存</a></dd>
+	</dl>
+	<dl id="docdl-3">
+		<dt><span class="iconfont icon-shitumoshi"></span>视图<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="306-3.html" id="doc-menu-3-306">视图文件创建</a></dd>
+		<dd><a href="307-3.html" id="doc-menu-3-307">调用、引用视图</a></dd>
+		<dd><a href="350-3.html" id="doc-menu-3-350">视图路径模式</a></dd>
+	</dl>
+	<dl id="docdl-4">
+		<dt><span class="iconfont icon-kaishibaifang"></span>会话机制<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="308-4.html" id="doc-menu-4-308">cookie 操作</a></dd>
+		<dd><a href="309-4.html" id="doc-menu-4-309">文件型 session</a></dd>
+		<dd><a href="310-4.html" id="doc-menu-4-310">session [memcache]</a></dd>
+		<dd><a href="311-4.html" id="doc-menu-4-311">session [redis]</a></dd>
+	</dl>
+	<dl id="docdl-5">
+		<dt><span class="iconfont icon-data"></span>缓存机制<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="313-5.html" id="doc-menu-5-313">缓存概述及配置</a></dd>
+		<dd><a href="314-5.html" id="doc-menu-5-314">控制器操作 · 文件型</a></dd>
+		<dd><a href="315-5.html" id="doc-menu-5-315">控制器操作 · memcache</a></dd>
+		<dd><a href="316-5.html" id="doc-menu-5-316">控制器操作 · redis</a></dd>
+		<dd><a href="356-5.html" id="doc-menu-5-356">模型内缓存</a></dd>
+		<dd><a href="355-5.html" id="doc-menu-5-355">自定义缓存类文件</a></dd>
+		
+	</dl>
+	<dl id="docdl-6">
+		<dt><span class="iconfont icon-icon-test"></span>配置、常量、语言<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="319-6.html" id="doc-menu-6-319">全局配置、分组配置</a></dd>
+		<dd><a href="320-6.html" id="doc-menu-6-320">预定义常量</a></dd>
+		<dd><a href="321-6.html" id="doc-menu-6-321">语言包使用说明</a></dd>
+	</dl>
+	<dl id="docdl-7">
+		<dt><span class="iconfont icon-ai-tool"></span>工具<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="323-7.html" id="doc-menu-7-323">函数小工具</a></dd>
+		<dd><a href="../../tools.html" id="doc-menu-6-320" target="_blank">工具类大全</a></dd>
+	</dl>
+	<dl id="docdl-8">
+		<dt><span class="iconfont icon-anquanbaozhang"></span>安全与扩展<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="325-8.html" id="doc-menu-8-325">框架部署安全</a></dd>
+		<dd><a href="324-8.html" id="doc-menu-8-324">常规安全</a></dd>
+		<dd><a href="326-8.html" id="doc-menu-8-326">扩展说明</a></dd>
+	</dl>
+</div>	</div>
+	<div class="grace-rows2 grace-r">
+		<div style="line-height:2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;">
+			<h1 class="grace-h3 grace-color-green">phpGrace 数据验证</h1>
+		</div>
+		<div  style="padding:15px 0; margin-top:12px;">
+			<a href="https://ke.qq.com/course/310478" target="_blank">
+				<img src="../../statics/images/video2.png" width="100%" />
+			</a>
+		</div>
+		<div class="grace-content" style="padding:15px 0px;">
+			<p><strong>数据验证</strong><br/>phpGrace 内置了数据验证工具类，可以方便、全面的验证数据！<br/><br/><strong>使用步骤</strong><br/></p><pre class="brush:html;toolbar:false">//1、定义验证规则
+$checkRules&nbsp;&nbsp;=&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;&#39;name&#39;&nbsp;=&gt;&nbsp;array(&#39;验证类型&#39;,&nbsp;&#39;验证规则匹配的数据&#39;,&nbsp;&#39;错误信息&#39;),
+&nbsp;&nbsp;&nbsp;&nbsp;......
+);
+//2、实例化数据验证工具（参数：1、被验证的数据&nbsp;2、验证规则&nbsp;3、是否自动验证&nbsp;Token&nbsp;【可选参数&nbsp;默认&nbsp;false】）
+$dataChecker&nbsp;=&nbsp;new&nbsp;phpGrace\tools\dataChecker(需要验证的数据,&nbsp;验证规则);
+//3、获取验证结果
+$res&nbsp;=&nbsp;$dataChecker-&gt;check();
+//4、根据验证结果进行后续的工作
+if($res){
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&#39;ok&#39;;
+}else{
+&nbsp;&nbsp;&nbsp;&nbsp;//获取验证的错误信息&nbsp;$dataChecker-&gt;error
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$dataChecker-&gt;error;
+}</pre><p><br/><strong>验证规则列表</strong><br/></p><table><thead><tr class="firstRow"><td valign="top" style="word-break: break-all;">类型</td><td valign="top" style="word-break: break-all;">功能</td><td valign="top" style="word-break: break-all;">规则参数</td></tr></thead><tbody><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">string</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">字符串长度检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：5, 100</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">int<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">整数及长度检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如 : 1, 8</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">betweend</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">整数区间检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100,999</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">between</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">数值区间检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：-500, 22</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">isFloat</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">小数检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无需参数<br/></td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">betweenf</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">小数区间检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：1, 88</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">floatLenght</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">小数及小数位数检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：2,3</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">gt</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">大于某个数值</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">gtAndSame</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">大于等于某个数值</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">lt<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">小于某个数值</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">ltAndSame</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">小于等于某个数值</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">same<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">等于某个值</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100 或 grace</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">notSame</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">不等于某个值</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">如：100</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">email<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">邮件地址检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无需参数</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">phone<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">手机号码检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无需参数</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">url<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">url 地址检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无需参数</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">zipcode<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">邮编检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无需参数</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">reg<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">正则表达检查</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">自定义正则表达式</td></tr></tbody></table><p><br/><strong>演示代码【直接验证 $_POST】</strong><br/></p><pre class="brush:html;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$checkRules&nbsp;&nbsp;=&nbsp;array(
+	&nbsp;&nbsp;&nbsp;&nbsp;&#39;name&#39;&nbsp;=&gt;&nbsp;array(&#39;string&#39;,&nbsp;&nbsp;&nbsp;&#39;1,10&#39;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;姓名应为1-10个字&#39;),
+	&nbsp;&nbsp;&nbsp;&nbsp;&#39;age&#39;&nbsp;&nbsp;=&gt;&nbsp;array(&#39;betweenD&#39;,&nbsp;&#39;18,&nbsp;188&#39;,&nbsp;&nbsp;&#39;请正确填写年龄&#39;)
+	);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dataChecker&nbsp;=&nbsp;new&nbsp;phpGrace\tools\dataChecker($_POST,&nbsp;$checkRules);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$res&nbsp;=&nbsp;$dataChecker-&gt;check();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//根据验证结果进行后续的工作
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($res){
+	&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&#39;ok&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{
+	&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$dataChecker-&gt;error;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>验证指定数据及多重检查</strong><br/></p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;array(
+	&nbsp;&nbsp;&nbsp;&nbsp;&#39;name&#39;&nbsp;=&gt;&nbsp;&#39;grace&#39;,
+	&nbsp;&nbsp;&nbsp;&nbsp;&#39;age&#39;&nbsp;&nbsp;=&gt;&nbsp;666
+	);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$checkRules&nbsp;&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;name&#39;&nbsp;=&gt;&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&#39;string&#39;,&nbsp;&nbsp;&nbsp;&#39;1,10&#39;,&nbsp;&nbsp;&#39;姓名应为1-10个字&#39;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&#39;notSame&#39;,&nbsp;&nbsp;&#39;grace&#39;,&nbsp;&#39;姓名不能为grace&#39;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;age&#39;&nbsp;&nbsp;=&gt;&nbsp;array(&#39;betweenD&#39;,&nbsp;&#39;18,&nbsp;188&#39;,&nbsp;&nbsp;&#39;请正确填写年龄&#39;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dataChecker&nbsp;=&nbsp;new&nbsp;phpGrace\tools\dataChecker($data,&nbsp;$checkRules);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$res&nbsp;=&nbsp;$dataChecker-&gt;check();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//根据验证结果进行后续的工作
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($res){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&#39;ok&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$dataChecker-&gt;error;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/></p>		</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+$('#nav-doc').addClass('grace-current');
+var index = $('#docdl-2').index();
+$('#grace-accordion').accordion(index);
+$('#doc-menu-2-305').addClass('grace-current');
+</script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('pre').addClass('prettyprint');
+$('table').each(function(){
+	$(this).find('tr:even').find('td').css({background:'#F6F7F8'});
+});
+prettyPrint();
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : doc, 方法 : info - 运行时间 : 47.69毫秒, 占用内存 : 39.97k");</script>

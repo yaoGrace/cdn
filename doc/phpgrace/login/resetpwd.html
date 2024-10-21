@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>graceCMS - 重置密码</title>
+<meta name="keywords" content="graceCMS - 重置密码" />
+<meta name="description" content="graceCMS - 重置密码 " />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../index.html"><img src="http://static.phpgrace.com/statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+			<li><a href="../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../tools.html" id="nav-tool">工具</a></li>
+			<li><a href="../wechat.html" id="nav-wx">微信</a></li>
+			<!-- li><a href="/topics" id="nav-topics">交流</a></li -->
+			<li>
+								<a href="../login.html">登录</a>
+							</li>
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../login.html">账户中心</a>
+	<a href="../login.html">我的话题</a>
+	<a href="../login.html">我的评论</a>
+	<a href="../index.html">退出系统</a>
+</div>
+<style type="text/css">body{background:url(../statics/images/loginbg.jpg) no-repeat top center; background-size:100% auto;}
+.grace-footer{position:fixed; z-index:2; left:0; bottom:0; width:100%; opacity:0.8; padding:15px 0;}
+@media screen and (max-width:800px){
+	body{background-size:auto 100%;}
+	.grace-footer{padding:15px 0;}
+}
+</style>
+<div class="grace-login">
+	<div class="grace-login-title">
+		重置密码
+	</div>
+	<div>
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tr>
+				<td width="25%">邮箱地址</td>
+				<td><input type="text" id="user" value="" class="grace-input grace-noborder" /></td>
+			</tr>
+			<tr>
+				<td>邮箱验证码</td>
+				<td>
+					<input type="text" id="yzm" value="" class="grace-input grace-noborder grace-fl" style="width:40%;" />
+					<a href="javascript:void(0);" class="grace-login-reg" id="sendMailBtn" onclick="sendMail();">点击发送邮件</a>
+				</td>
+			</tr>
+			<tr>
+				<td>新的密码</td>
+				<td><input type="password" id="pwd" value="" class="grace-input grace-noborder" /></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					<div class="grace-button grace-fl" id="subBtn" onclick="submitDo()">提交</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td id="errorMsg" style="color:#FF0000;"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+$(function(){
+	$('#nav-login').addClass('grace-current');
+	$('#grace-login-vcode').click(function(){
+		$(this).attr('src', '/login/vcode/'+Math.random());
+	});
+	var winHeight = $(window).height() - 160;
+	var mTop      = (winHeight - $('.grace-login').height() - 40) / 2;
+	if(mTop < 1){mTop = 0;}
+	$('.grace-login').css({marginTop:mTop+'px'});
+	$('.grace-login input').focus(function(){$('#errorMsg').html('');});
+});
+
+function showError(msg){
+	$('#errorMsg').html(msg);
+	return false;
+}
+var subBtn = $('#subBtn').html();
+function submitDo(){
+	if($('#subBtn').html() != subBtn){return false;}
+	var user = $('#user').val();
+	var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	if(!reg.test(user)){return showError('请正确填写邮箱');}
+	var yzm = $('#yzm').val();
+	if(yzm.length != 6){return showError('请正确填写邮件验证码');}
+	var pwd = $('#pwd').val();
+	if(pwd.length < 6){return showError('新密码至少6个字符');}
+	$('#subBtn').html('提交中...');
+	$.post(
+		'/login/resetpwdnow',
+		{username:user, yzm:yzm, password:pwd},
+		function(res){
+			res = $.parseJSON(res);
+			if(res.status == 'ok'){
+				$('#subBtn').html('重置成功');
+				setTimeout(function(){
+					alert('重置成功，请使用新密码登录！');
+					location.href = '/login';
+				}, 1000);
+				return true;
+			}else{
+				showError(res.data);
+				$('#subBtn').html(subBtn);
+			}
+		}
+	);
+}
+var sendMailBtn = $('#sendMailBtn').html();
+function sendMail(){
+	if($('#sendMailBtn').html() != sendMailBtn){return false;}
+	var user = $('#user').val();
+	var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	if(!reg.test(user)){return showError('请正确填写邮箱');}
+	$('#sendMailBtn').html('邮件发送中...');
+	$.getJSON(
+		'/login/sendMail/'+user,
+		function(res){
+			if(res.status ==  'ok'){
+				$('#sendMailBtn').html('邮件已发送');
+			}else{
+				$('#sendMailBtn').html(sendMailBtn);
+				showError(res.data);
+			}
+		}
+	);
+}
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : login, 方法 : resetpwd - 运行时间 : 0.23毫秒, 占用内存 : 8.63k");</script>

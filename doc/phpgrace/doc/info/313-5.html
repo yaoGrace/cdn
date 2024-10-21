@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpGrace 缓存机制说明</title>
+<meta name="keywords" content="phpGrace,缓存机制" />
+<meta name="description" content="phpGrace 缓存机制说明" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-rows1 grace-l">
+		<div class="grace-accordion" id="grace-accordion">
+	<dl id="docdl-0">
+		<dt><span class="iconfont icon-kaishibaifang"></span>快速开始<i class="iconfont icon-jt-down"></i></dt>
+		<dd class="grace-mobile-hide"><a href="../../doc.html" id="doc-menu-0-0">框架介绍</a></dd>
+		<dd><a href="352-0.html" id="doc-menu-0-352">下载运行</a></dd>
+		<dd><a href="288-0.html" id="doc-menu-0-288">环境需求</a></dd>
+		<dd><a href="295-0.html" id="doc-menu-0-295">目录命名</a></dd>
+		<dd><a href="296-0.html" id="doc-menu-0-296">运行流程</a></dd>
+		<dd><a href="354-0.html" id="doc-menu-0-354">更新日志</a></dd>
+	</dl>
+	<dl id="docdl-99">
+		<dt><span class="iconfont icon-shipin"></span>视频教程<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="https://ke.qq.com/course/310478" target="_blank">腾讯课程</a></dd>
+		<dd><a href="https://pan.baidu.com/s/1DftW9G8XtuL_u4WvQY7wtA" target="_blank">百度网盘</a></dd>
+		<dd><a href="https://www.bilibili.com/video/BV1nr4y1y7NE/" target="_blank">B站播放</a></dd>
+	</dl>
+	<dl id="docdl-1">
+		<dt><span class="iconfont icon-inspur-link"></span>控制器与路由<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="297-1.html" id="doc-menu-1-297">创建控制器</a></dd>
+		<dd><a href="303-1.html" id="doc-menu-1-303">基础控制器</a></dd>
+		<dd><a href="298-1.html" id="doc-menu-1-298">url 解析规则</a></dd>
+		<dd><a href="299-1.html" id="doc-menu-1-299">自定义路由</a></dd>
+		<dd><a href="312-1.html" id="doc-menu-1-312">url 生成</a></dd>
+		<dd><a href="353-1.html" id="doc-menu-1-353">调用控制器</a></dd>
+	</dl>
+	<dl id="docdl-2">
+		<dt><span class="iconfont icon-shuju1"></span>数据与模型<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="300-2.html" id="doc-menu-2-300">配置数据库</a></dd>
+		<dd><a href="301-2.html" id="doc-menu-2-301">获取数据操作对象</a></dd>
+		<dd><a href="302-2.html" id="doc-menu-2-302">数据操作(CURD)</a></dd>
+		<dd><a href="349-2.html" id="doc-menu-2-349">数据分页详解</a></dd>
+		<dd><a href="327-2.html" id="doc-menu-2-327">事务操作</a></dd>
+		<dd><a href="305-2.html" id="doc-menu-2-305">数据验证</a></dd>
+		<dd><a href="322-2.html" id="doc-menu-2-322">表单令牌及验证</a></dd>
+		<dd><a href="304-2.html" id="doc-menu-2-304">模型创建与调用</a></dd>
+		<dd><a href="356-2.html" id="doc-menu-2-356">模型内缓存</a></dd>
+	</dl>
+	<dl id="docdl-3">
+		<dt><span class="iconfont icon-shitumoshi"></span>视图<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="306-3.html" id="doc-menu-3-306">视图文件创建</a></dd>
+		<dd><a href="307-3.html" id="doc-menu-3-307">调用、引用视图</a></dd>
+		<dd><a href="350-3.html" id="doc-menu-3-350">视图路径模式</a></dd>
+	</dl>
+	<dl id="docdl-4">
+		<dt><span class="iconfont icon-kaishibaifang"></span>会话机制<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="308-4.html" id="doc-menu-4-308">cookie 操作</a></dd>
+		<dd><a href="309-4.html" id="doc-menu-4-309">文件型 session</a></dd>
+		<dd><a href="310-4.html" id="doc-menu-4-310">session [memcache]</a></dd>
+		<dd><a href="311-4.html" id="doc-menu-4-311">session [redis]</a></dd>
+	</dl>
+	<dl id="docdl-5">
+		<dt><span class="iconfont icon-data"></span>缓存机制<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="313-5.html" id="doc-menu-5-313">缓存概述及配置</a></dd>
+		<dd><a href="314-5.html" id="doc-menu-5-314">控制器操作 · 文件型</a></dd>
+		<dd><a href="315-5.html" id="doc-menu-5-315">控制器操作 · memcache</a></dd>
+		<dd><a href="316-5.html" id="doc-menu-5-316">控制器操作 · redis</a></dd>
+		<dd><a href="356-5.html" id="doc-menu-5-356">模型内缓存</a></dd>
+		<dd><a href="355-5.html" id="doc-menu-5-355">自定义缓存类文件</a></dd>
+		
+	</dl>
+	<dl id="docdl-6">
+		<dt><span class="iconfont icon-icon-test"></span>配置、常量、语言<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="319-6.html" id="doc-menu-6-319">全局配置、分组配置</a></dd>
+		<dd><a href="320-6.html" id="doc-menu-6-320">预定义常量</a></dd>
+		<dd><a href="321-6.html" id="doc-menu-6-321">语言包使用说明</a></dd>
+	</dl>
+	<dl id="docdl-7">
+		<dt><span class="iconfont icon-ai-tool"></span>工具<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="323-7.html" id="doc-menu-7-323">函数小工具</a></dd>
+		<dd><a href="../../tools.html" id="doc-menu-6-320" target="_blank">工具类大全</a></dd>
+	</dl>
+	<dl id="docdl-8">
+		<dt><span class="iconfont icon-anquanbaozhang"></span>安全与扩展<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="325-8.html" id="doc-menu-8-325">框架部署安全</a></dd>
+		<dd><a href="324-8.html" id="doc-menu-8-324">常规安全</a></dd>
+		<dd><a href="326-8.html" id="doc-menu-8-326">扩展说明</a></dd>
+	</dl>
+</div>	</div>
+	<div class="grace-rows2 grace-r">
+		<div style="line-height:2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;">
+			<h1 class="grace-h3 grace-color-green">phpGrace 缓存机制说明</h1>
+		</div>
+		<div  style="padding:15px 0; margin-top:12px;">
+			<a href="https://ke.qq.com/course/310478" target="_blank">
+				<img src="../../statics/images/video2.png" width="100%" />
+			</a>
+		</div>
+		<div class="grace-content" style="padding:15px 0px;">
+			<p><strong>phpGrace 缓存机制说明</strong><br/>在项目开发过程中我们经常会利用缓存来缓解数据查询、复杂运算带来的服务器压力以应对高并发！<br/>phpGrace 封装了简洁高效的缓存方案，支持文件、memcache、redis三种形式的缓存方式。<br/><br/><strong>设置缓存类型及相关配置 /phpGrace/config.php（全局配置）</strong><br/></p><pre class="brush:php;toolbar:false">&lt;?php
+return&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;......
+&nbsp;&nbsp;&nbsp;&nbsp;//支持的缓存类型
+&nbsp;&nbsp;&nbsp;&nbsp;&#39;allowCacheType&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;array(&#39;file&#39;,&nbsp;&#39;memcache&#39;,&nbsp;&#39;redis&#39;),
+&nbsp;&nbsp;&nbsp;&nbsp;//缓存设置
+&nbsp;&nbsp;&nbsp;&nbsp;&#39;cache&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;type&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&#39;memcache&#39;,&nbsp;&nbsp;//&nbsp;支持类型&nbsp;:&nbsp;file&nbsp;[文件型],&nbsp;memcache&nbsp;,&nbsp;redis
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//以下配置为&nbsp;memcache&nbsp;及&nbsp;redis&nbsp;类型缓存的必须设置
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;host&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&#39;127.0.0.1&#39;,&nbsp;//&nbsp;主机地址
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;port&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&#39;11211&#39;,&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;端口&nbsp;memcache&nbsp;一般端口为&nbsp;11211,&nbsp;redis&nbsp;一般为&nbsp;6379
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;pre&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&#39;grace_&#39;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;缓存变量前缀
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;name2md5&#39;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;FALSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;为&nbsp;true&nbsp;时会将缓存变量名进行md5&nbsp;加密
+&nbsp;&nbsp;&nbsp;&nbsp;)
+);</pre><p><br/>统一规则的缓存操作方法【<strong>控制器成员方法</strong>】：<br/><strong>cache($name, $id = null, $queryMethod, $timer =3600, $isSuper = true)&nbsp;</strong><br/>php 控制器内置了统一的缓存处理函数 cache，此方法会动态的判断缓存的有效性，并根据实际情况去调用数据查询、运算等方法。<br/>参数：<br/></p><pre class="brush:php;toolbar:false">1、缓存名称&nbsp;:&nbsp;请使用规范的英文字母+数字+下划线进行命名
+2、影响id&nbsp;:&nbsp;可以是字符串的组合,&nbsp;也可以试一个一维数组
+3、数据车查询函数
+4、有效期【可选参数，默认&nbsp;3600秒】
+5、是否为全局缓存【可选参数，默认&nbsp;是】
+&nbsp;&nbsp;&nbsp;【是】缓存名称格式：缓存前缀+缓存名称+影响id
+&nbsp;&nbsp;&nbsp;【否】缓存名称格式：缓存前缀+控制器名称+方法名称+缓存名称+影响id</pre><p><br/><strong>调用：</strong><br/>在控制器内容直接使用 cache 函数即可：<br/></p><pre class="brush:php;toolbar:false">$this-&gt;cache(&#39;test&#39;,&nbsp;&#39;1002abc&#39;,&nbsp;&#39;__查询函数名称&#39;);</pre><p><br/><strong>删除指定的缓存&nbsp;removeCache($name, $id = null, $isSuper = true)<br/></strong>参数：<strong><br/></strong></p><pre class="brush:php;toolbar:false">1、缓存名称
+2、影响id
+3、是否全局</pre><p><br/><strong>清空缓存&nbsp;clearCache</strong><br/>使用&nbsp;clearCache 函数可以快速的情况所有缓存<br/><br/><strong>开发环境下一句代码关闭全部缓存</strong><br/>在入口页面添加以下代码即可关闭所有缓存！<br/></p><pre class="brush:php;toolbar:false">define(&#39;PG_CLOSE_CACHE&#39;,&nbsp;true);</pre><p>为什么要这样？？<br/>您可以预先写好缓存代码，数据在开发时是实时的，当开发完成、测试完毕删除这行代码，服务器端就可以完美运行在缓存环境下了 ^_^<br/></p>		</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+$('#nav-doc').addClass('grace-current');
+var index = $('#docdl-5').index();
+$('#grace-accordion').accordion(index);
+$('#doc-menu-5-313').addClass('grace-current');
+</script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('pre').addClass('prettyprint');
+$('table').each(function(){
+	$(this).find('tr:even').find('td').css({background:'#F6F7F8'});
+});
+prettyPrint();
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : doc, 方法 : info - 运行时间 : 0.66毫秒, 占用内存 : 20.88k");</script>

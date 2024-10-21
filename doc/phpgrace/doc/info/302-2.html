@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpGrace 数据库操作</title>
+<meta name="keywords" content="phpGrace 数据库操作" />
+<meta name="description" content="phpGrace 数据库操作" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-rows1 grace-l">
+		<div class="grace-accordion" id="grace-accordion">
+	<dl id="docdl-0">
+		<dt><span class="iconfont icon-kaishibaifang"></span>快速开始<i class="iconfont icon-jt-down"></i></dt>
+		<dd class="grace-mobile-hide"><a href="../../doc.html" id="doc-menu-0-0">框架介绍</a></dd>
+		<dd><a href="352-0.html" id="doc-menu-0-352">下载运行</a></dd>
+		<dd><a href="288-0.html" id="doc-menu-0-288">环境需求</a></dd>
+		<dd><a href="295-0.html" id="doc-menu-0-295">目录命名</a></dd>
+		<dd><a href="296-0.html" id="doc-menu-0-296">运行流程</a></dd>
+		<dd><a href="354-0.html" id="doc-menu-0-354">更新日志</a></dd>
+	</dl>
+	<dl id="docdl-99">
+		<dt><span class="iconfont icon-shipin"></span>视频教程<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="https://ke.qq.com/course/310478" target="_blank">腾讯课程</a></dd>
+		<dd><a href="https://pan.baidu.com/s/1DftW9G8XtuL_u4WvQY7wtA" target="_blank">百度网盘</a></dd>
+		<dd><a href="https://www.bilibili.com/video/BV1nr4y1y7NE/" target="_blank">B站播放</a></dd>
+	</dl>
+	<dl id="docdl-1">
+		<dt><span class="iconfont icon-inspur-link"></span>控制器与路由<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="297-1.html" id="doc-menu-1-297">创建控制器</a></dd>
+		<dd><a href="303-1.html" id="doc-menu-1-303">基础控制器</a></dd>
+		<dd><a href="298-1.html" id="doc-menu-1-298">url 解析规则</a></dd>
+		<dd><a href="299-1.html" id="doc-menu-1-299">自定义路由</a></dd>
+		<dd><a href="312-1.html" id="doc-menu-1-312">url 生成</a></dd>
+		<dd><a href="353-1.html" id="doc-menu-1-353">调用控制器</a></dd>
+	</dl>
+	<dl id="docdl-2">
+		<dt><span class="iconfont icon-shuju1"></span>数据与模型<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="300-2.html" id="doc-menu-2-300">配置数据库</a></dd>
+		<dd><a href="301-2.html" id="doc-menu-2-301">获取数据操作对象</a></dd>
+		<dd><a href="302-2.html" id="doc-menu-2-302">数据操作(CURD)</a></dd>
+		<dd><a href="349-2.html" id="doc-menu-2-349">数据分页详解</a></dd>
+		<dd><a href="327-2.html" id="doc-menu-2-327">事务操作</a></dd>
+		<dd><a href="305-2.html" id="doc-menu-2-305">数据验证</a></dd>
+		<dd><a href="322-2.html" id="doc-menu-2-322">表单令牌及验证</a></dd>
+		<dd><a href="304-2.html" id="doc-menu-2-304">模型创建与调用</a></dd>
+		<dd><a href="356-2.html" id="doc-menu-2-356">模型内缓存</a></dd>
+	</dl>
+	<dl id="docdl-3">
+		<dt><span class="iconfont icon-shitumoshi"></span>视图<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="306-3.html" id="doc-menu-3-306">视图文件创建</a></dd>
+		<dd><a href="307-3.html" id="doc-menu-3-307">调用、引用视图</a></dd>
+		<dd><a href="350-3.html" id="doc-menu-3-350">视图路径模式</a></dd>
+	</dl>
+	<dl id="docdl-4">
+		<dt><span class="iconfont icon-kaishibaifang"></span>会话机制<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="308-4.html" id="doc-menu-4-308">cookie 操作</a></dd>
+		<dd><a href="309-4.html" id="doc-menu-4-309">文件型 session</a></dd>
+		<dd><a href="310-4.html" id="doc-menu-4-310">session [memcache]</a></dd>
+		<dd><a href="311-4.html" id="doc-menu-4-311">session [redis]</a></dd>
+	</dl>
+	<dl id="docdl-5">
+		<dt><span class="iconfont icon-data"></span>缓存机制<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="313-5.html" id="doc-menu-5-313">缓存概述及配置</a></dd>
+		<dd><a href="314-5.html" id="doc-menu-5-314">控制器操作 · 文件型</a></dd>
+		<dd><a href="315-5.html" id="doc-menu-5-315">控制器操作 · memcache</a></dd>
+		<dd><a href="316-5.html" id="doc-menu-5-316">控制器操作 · redis</a></dd>
+		<dd><a href="356-5.html" id="doc-menu-5-356">模型内缓存</a></dd>
+		<dd><a href="355-5.html" id="doc-menu-5-355">自定义缓存类文件</a></dd>
+		
+	</dl>
+	<dl id="docdl-6">
+		<dt><span class="iconfont icon-icon-test"></span>配置、常量、语言<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="319-6.html" id="doc-menu-6-319">全局配置、分组配置</a></dd>
+		<dd><a href="320-6.html" id="doc-menu-6-320">预定义常量</a></dd>
+		<dd><a href="321-6.html" id="doc-menu-6-321">语言包使用说明</a></dd>
+	</dl>
+	<dl id="docdl-7">
+		<dt><span class="iconfont icon-ai-tool"></span>工具<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="323-7.html" id="doc-menu-7-323">函数小工具</a></dd>
+		<dd><a href="../../tools.html" id="doc-menu-6-320" target="_blank">工具类大全</a></dd>
+	</dl>
+	<dl id="docdl-8">
+		<dt><span class="iconfont icon-anquanbaozhang"></span>安全与扩展<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="325-8.html" id="doc-menu-8-325">框架部署安全</a></dd>
+		<dd><a href="324-8.html" id="doc-menu-8-324">常规安全</a></dd>
+		<dd><a href="326-8.html" id="doc-menu-8-326">扩展说明</a></dd>
+	</dl>
+</div>	</div>
+	<div class="grace-rows2 grace-r">
+		<div style="line-height:2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;">
+			<h1 class="grace-h3 grace-color-green">phpGrace 数据库操作</h1>
+		</div>
+		<div  style="padding:15px 0; margin-top:12px;">
+			<a href="https://ke.qq.com/course/310478" target="_blank">
+				<img src="../../statics/images/video2.png" width="100%" />
+			</a>
+		</div>
+		<div class="grace-content" style="padding:15px 0px;">
+			<p><strong>phpGrace Db 概述</strong><br/></p><pre class="brush:html;toolbar:false">phpgrace&nbsp;db&nbsp;操作类以pdo为基础、全面采用预处理机制、最大程度保证了数据操作的安全性。采用了单利模式，保证一库一连、一表一对象！为高效开发提供了基础。
+大部分的数据操作都无需编写复杂的sql命令，简单配置即可。</pre><p><br/><strong>准备工作：数据库信息配置</strong><br/>使用数据库操作前，请打开保证数据库配置正确！具体操作见上一节 ^_^<br/></p><p><br/></p><p><strong>数据操作详解<br/></strong>下文将以数据表 persons为例，数据结构 :<br/></p><table><thead><tr class="firstRow"><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">字段</td><td valign="top" style="word-break: break-all;">类型</td><td valign="top" style="word-break: break-all;">长度</td><td valign="top" style="word-break: break-all;">作用</td></tr></thead><tbody><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">id<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">int</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">10</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">主键自动增加</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">name<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">vachar</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">20</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">姓名</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">age<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">int</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">4</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">年龄</td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">addtime<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">int</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">11</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">添加时间<br/></td></tr><tr><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">classid<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">int</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">10</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">班级id 索引</td></tr></tbody></table><p><br/></p><p><strong>增加数据 add($data)</strong><br/>功能：向数据表内写入数据。<br/>参数：数值形式的数据对象（键名称对应数据表的字段名）<br/>返回：写入数据对应的主键数据值</p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$tableName&nbsp;=&nbsp;&#39;persons&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$addData&nbsp;&nbsp;=&nbsp;array(&#39;name&#39;&nbsp;=&gt;&nbsp;&#39;grace&#39;,&nbsp;&#39;age&#39;&nbsp;=&gt;&nbsp;mt_rand(10,&nbsp;200));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$personId&nbsp;=&nbsp;$this-&gt;db-&gt;add($addData);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($personId){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&#39;写入数据成功，主键：&#39;.$personId;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&#39;&lt;br&nbsp;/&gt;&#39;.$this-&gt;db-&gt;getSql();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&#39;&lt;br&nbsp;/&gt;&#39;.$this-&gt;db-&gt;error();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>获取最近一次执行的操作命令&nbsp;getSql()</strong><br/>功能：获取最近一次执行的操作命令<br/>参数：无<br/>返回：最近一次执行的操作命令<br/><br/><strong style="white-space: normal;">设置条件 where($where, $whereData)</strong><br/>功能：设置sql条件（预处理机制）<br/>参数：1、条件（使用 ? 作为展位符）2、条件占位符对应的数值（数组格式）<br/><br/><strong>删除数据 delete()</strong><br/>功能：删除一条或者多条符合条件的数据<br/>参数：无<br/>返回：true / false<br/></p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$tableName&nbsp;=&nbsp;&#39;persons&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;db-&gt;where(&#39;id&nbsp;=&nbsp;?&#39;,&nbsp;array(1))-&gt;delete();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>更新数据 update()</strong><br/>功能：更新符合条件的数据<br/>参数：更新数据（数组格式，键名称对应数据表的字段名）<br/></p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$tableName&nbsp;=&nbsp;&#39;persons&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+	$data&nbsp;=&nbsp;array(&#39;name&#39;&nbsp;=&gt;&nbsp;&#39;phpGrace&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;db-&gt;where(&#39;id&nbsp;=&nbsp;?&#39;,&nbsp;array(2))-&gt;update($data);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>对指定的字段进行递加或递减&nbsp;field()</strong><br/>参数：1、字段名称 2、递加值 （正数递加，负数递减）<br/></p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$tableName&nbsp;=&nbsp;&#39;persons&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;db-&gt;where(&#39;id&nbsp;=&nbsp;?&#39;,&nbsp;array(2))-&gt;field(&#39;age&#39;,&nbsp;1);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>获取单条数据 fetch()</strong><br/>功能：获取单条数据<br/>参数：查询字段（可省参数，默认 *）<br/>返回：查询成功返回数组形式的数据，失败返回空（可以使用empty函数判断）<br/>说明：可以配合条件进行查询<br/></p><pre class="brush:php;toolbar:false">$arr&nbsp;=&nbsp;$personModel-&gt;where(&#39;id&nbsp;=&nbsp;?&#39;,&nbsp;array(2))-&gt;fetch();
+print_r($arr);</pre><p><br/></p><p style="WHITE-SPACE: normal"><strong>获取多条数据 fetchAll()</strong><br/>功能：获取多条数据<br/>参数：查询字段（可省参数，默认 *）<br/>返回：查询成功返回数组形式的数据，失败返回空（可以使用empty函数判断）<br/>说明：可以配合条件、排序、分页等方法进行查询</p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$tableName&nbsp;=&nbsp;&#39;persons&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;$this-&gt;db-&gt;fetchAll();
+	p($data);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>查询排序 order()</strong><br/>功能：设置排序规则<br/>参数：排序规则<br/></p><pre class="brush:php;toolbar:false">$data&nbsp;=&nbsp;$this-&gt;db-&gt;order(&#39;id&nbsp;desc&#39;)-&gt;fetchAll();</pre><p><br/><strong>查询数据截取 limit($start, $num)</strong><br/>功能：设置limit，截取数据<br/>参数：1、起始位置， 2、数据条目数<br/></p><pre class="brush:php;toolbar:false">$data&nbsp;=&nbsp;$this-&gt;db-&gt;order(&#39;id&nbsp;desc&#39;)-&gt;limit(0,&nbsp;10)-&gt;fetchAll();</pre><p><br/><strong>执行自定义的sql命令&nbsp;query($sql, $execute)</strong><br/>参数：1、sql命令（如果有条件推荐使用展位符 ?）, 2、占位符对应的数据（可省参数，sql命令包含占位符时传递）<br/></p><pre class="brush:php;toolbar:false">$res&nbsp;=&nbsp;$this-&gt;db-&gt;query(&#39;delete&nbsp;from&nbsp;persons&nbsp;where&nbsp;id&nbsp;=&nbsp;?&#39;,&nbsp;array(2));
+print_r($res);</pre><p><br/><strong>queryFetch 和&nbsp;queryFetchAll()</strong><br/>功能：使用query()函数查询数据时后续的查询函数，queryFetch() 用于单条数据，queryFetchAll()用于多条数据。<br/>参数：无<br/>返回：对应的数据（数组形式）<br/></p><pre class="brush:php;toolbar:false">$this-&gt;db-&gt;query(&#39;select&nbsp;*&nbsp;from&nbsp;persons&nbsp;where&nbsp;id&nbsp;&gt;&nbsp;?&#39;,&nbsp;array(1));
+$arr&nbsp;=&nbsp;$this-&gt;db-&gt;queryFetchAll();
+print_r($arr);</pre><p><br/><strong>使用join() 完成多表联合</strong><br/>参数：联合语句<br/>示例表 classes 表结构<br/></p><table><thead><tr class="ue-table-interlace-color-single firstRow"><td width="492" valign="top" style="word-break: break-all;">字段</td><td width="492" valign="top" style="word-break: break-all;">类型</td><td width="492" valign="top" style="word-break: break-all;">长度</td></tr></thead><tbody><tr class="ue-table-interlace-color-double"><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">id<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">int</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">10</td></tr><tr class="ue-table-interlace-color-single"><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">class_name<br/></td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">varchar</td><td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">20</td></tr></tbody></table><pre class="brush:php;toolbar:false">&lt;?php&nbsp;&nbsp;&nbsp;&nbsp;
+class&nbsp;indexController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$tableName&nbsp;=&nbsp;&#39;persons&#39;;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;join(&#39;as&nbsp;a&nbsp;left&nbsp;join&nbsp;&#39;.sc(&#39;db&#39;,&#39;pre&#39;).&#39;classes&nbsp;as&nbsp;b&nbsp;on&nbsp;a.classid&nbsp;=&nbsp;b.id&#39;)-&gt;fetchAll(&#39;a.*,&nbsp;b.class_name&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print_r($arr);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/><strong>使用page()函数完成分页</strong><br/>参数：每页数据条目数（可省参数，默认 10条）<br/>返回：数组格式的查询数据<br/>格式：array(数据, 分页信息)<br/></p><pre class="brush:php;toolbar:false">&lt;?php
+$arr&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;page(1)-&gt;fetchAll();
+print_r($arr);</pre><p><br/><strong>获取sql错误方法&nbsp;error()<br/></strong></p><pre class="brush:html;toolbar:false">echo&nbsp;$this-&gt;db-&gt;error();</pre><p><br/><strong>获取原生的pdo操作对象&nbsp;getDb()</strong><br/></p><pre class="brush:html;toolbar:false">$pdo&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;getDb();
+var_dump($pdo);</pre><p><br/><strong>计算数据条目总数 count()</strong><br/></p><pre class="brush:html;toolbar:false">$count&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;count();
+echo&nbsp;$count;</pre><p><br/><strong>指定字段的数据最大值 max(字段)</strong><br/></p><pre class="brush:html;toolbar:false">$max&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;max(&#39;age&#39;);
+echo&nbsp;$max;</pre><p><br/><strong>指定字段的数据最小值 min(字段)</strong><br/></p><pre class="brush:html;toolbar:false">$min&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;min(&#39;age&#39;);
+echo&nbsp;$min;</pre><p><br/><strong>指定字段的数据平均值 avg(字段)</strong><br/></p><pre class="brush:html;toolbar:false">$avg&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;avg(&#39;age&#39;);
+echo&nbsp;$avg;</pre><p><br/><strong>指定字段的数据总和 sum(字段)</strong><br/></p><pre class="brush:html;toolbar:false">$sum&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;sum(&#39;age&#39;);
+echo&nbsp;$sum;</pre><p><br/><strong>获取写入数据的主键值&nbsp;lastInsertId()</strong><br/></p><pre class="brush:html;toolbar:false">$res&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;add(array(&#39;name&#39;&nbsp;=&gt;&nbsp;&#39;grace&#39;,&nbsp;&#39;age&#39;&nbsp;=&gt;&nbsp;18,&nbsp;&#39;addtime&#39;&nbsp;=&gt;&nbsp;10585888,&nbsp;&#39;classid&#39;&nbsp;=&gt;&nbsp;1));
+echo&nbsp;$this-&gt;db-&gt;lastInsertId();</pre><p><br/><strong>获取操作影响的数据条目数&nbsp;rowCount()</strong><br/></p><pre class="brush:html;toolbar:false">$res&nbsp;=&nbsp;&nbsp;$this-&gt;db-&gt;where(&#39;id&nbsp;&lt;&nbsp;?&#39;,&nbsp;array(2))-&gt;delete();
+echo&nbsp;$this-&gt;db-&gt;rowCount();</pre><p><br/><strong>group by</strong><br/></p><pre class="brush:html;toolbar:false">//原始语句
+select&nbsp;count(&#39;a.*&#39;),&nbsp;&nbsp;b.class_name&nbsp;from&nbsp;persons&nbsp;as&nbsp;a&nbsp;left&nbsp;join&nbsp;classes&nbsp;as&nbsp;b&nbsp;on&nbsp;a.classid&nbsp;=&nbsp;b.id&nbsp;group&nbsp;by&nbsp;a.classid&nbsp;;
+//代码实现：
+$res&nbsp;=&nbsp;$this-&gt;db
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;join(&#39;as&nbsp;a&nbsp;left&nbsp;join&nbsp;&#39;.sc(&#39;db&#39;,&nbsp;&#39;pre&#39;).&#39;classes&nbsp;as&nbsp;b&nbsp;on&nbsp;a.classid&nbsp;=&nbsp;b.id&#39;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;group(&#39;a.classid&#39;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;fetchAll(&quot;count(&#39;a.*&#39;)&nbsp;as&nbsp;total,&nbsp;b.class_name&quot;);
+echo&nbsp;$this-&gt;db-&gt;getSql().&#39;--&#39;;
+print_r($res);</pre><p><br/><strong>获取mysql版本&nbsp;mysqlV()</strong><br/></p><pre class="brush:html;toolbar:false">echo&nbsp;$this-&gt;db-&gt;mysqlV();</pre><p><br/><strong>表结构分析</strong><br/></p><pre class="brush:html;toolbar:false">$res&nbsp;=&nbsp;$this-&gt;db-&gt;desc();
+print_r($res);</pre><p><br/><strong>使用 debugSql 在控制台内输出执行的 sql</strong><br/></p><pre class="brush:php;toolbar:false">public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;$db&nbsp;=&nbsp;db(&#39;names&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;$db-&gt;fetchAll();
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;在执行sql&nbsp;后调用&nbsp;debugSql&nbsp;即可在控制台内输出刚刚执行的sql&nbsp;命令
+&nbsp;&nbsp;&nbsp;&nbsp;$db-&gt;debugSql();
+&nbsp;&nbsp;&nbsp;&nbsp;$db-&gt;fetchAll(&quot;name&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;在执行sql&nbsp;后调用&nbsp;debugSql&nbsp;即可在控制台内输出刚刚执行的sql&nbsp;命令
+&nbsp;&nbsp;&nbsp;&nbsp;$db-&gt;debugSql();
+}</pre><p><br/></p>		</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+$('#nav-doc').addClass('grace-current');
+var index = $('#docdl-2').index();
+$('#grace-accordion').accordion(index);
+$('#doc-menu-2-302').addClass('grace-current');
+</script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('pre').addClass('prettyprint');
+$('table').each(function(){
+	$(this).find('tr:even').find('td').css({background:'#F6F7F8'});
+});
+prettyPrint();
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : doc, 方法 : info - 运行时间 : 46.85毫秒, 占用内存 : 43.99k");</script>

@@ -19,4 +19,6 @@ https://cdn.jsdelivr.net/gh/用户名/项目名/文件名
  |--- otherProject      其他CDN
  ```
 
+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
+
  

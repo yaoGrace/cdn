@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户关注、取消关注接口实现</title>
+<meta name="keywords" content="用户关注、取消关注接口实现" />
+<meta name="description" content="用户关注、取消关注接口实现" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-rows1 grace-l">
+		<div class="grace-accordion" id="grace-accordion">
+	<dl id="docdl-0" class="grace-mobile-hide">
+		<dt>graceWechat<i class="iconfont icon-jt-down"></i></dt>
+		<dd class="grace-mobile-hide"><a href="../../wechat.html" id="doc-menu-0-0">graceWechat 介绍</a></dd>
+	</dl>
+	<dl id="docdl-1">
+		<dt>微信公众号常用<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="328-1.html" id="doc-menu-1-328">公众号开发资料</a></dd>
+		<dd><a href="329-1.html" id="doc-menu-1-329">快速接入公众号</a></dd>
+		<dd><a href="330-1.html" id="doc-menu-1-330">关注、取消关注</a></dd>
+		<dd><a href="331-1.html" id="doc-menu-1-331">接收、回复消息</a></dd>
+		<dd><a href="332-1.html" id="doc-menu-1-332">消息数据日志</a></dd>
+		<dd><a href="333-1.html" id="doc-menu-1-333">综合消息处理</a></dd>
+		<dd><a href="334-1.html" id="doc-menu-1-334">Access Token</a></dd>
+		<dd><a href="335-1.html" id="doc-menu-1-335">自定义菜单</a></dd>
+		<dd><a href="336-1.html" id="doc-menu-1-336">临时素材管理</a></dd>
+		<dd><a href="337-1.html" id="doc-menu-1-337">二维码生成及识别</a></dd>
+		<dd><a href="338-1.html" id="doc-menu-1-338">长链转短链</a></dd>
+		<dd><a href="339-1.html" id="doc-menu-1-339">模板消息</a></dd>
+		<dd><a href="340-1.html" id="doc-menu-1-340">获取用户信息</a></dd>
+	</dl>
+	<dl id="docdl-2">
+		<dt>网页开发及授权<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="341-2.html" id="doc-menu-2-341">前端框架推荐</a></dd>
+		<dd><a href="342-2.html" id="doc-menu-2-342">微信网页授权</a></dd>
+		<dd><a href="../../tools/info/17.html" target="_blank">微信扫码登录</a></dd>
+		<dd><a href="343-2.html" id="doc-menu-2-343">微信JS-SDK调用</a></dd>
+	</dl>
+	<dl id="docdl-3">
+		<dt>微信支付<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="https://pay.weixin.qq.com/wiki/doc/api/index.html" target="_blank">微信支付手册</a></dd>
+		<dd><a href="344-3.html" id="doc-menu-3-344">公众号内支付</a></dd>
+		<dd><a href="345-3.html" id="doc-menu-3-345">微信扫码支付</a></dd>
+		<dd><a href="346-3.html" id="doc-menu-3-346">H5+ APP支付</a></dd>
+		<dd><a href="347-3.html" id="doc-menu-3-347">微信小程序支付</a></dd>
+	</dl>
+	<dl id="docdl-4">
+		<dt>小程序<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="348-4.html" id="doc-menu-4-348">小程序code换opennid</a></dd>
+	</dl>
+</div>
+<script type="text/javascript">
+function buyGraceWechat(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	gDialog.alert('请联系客服 QQ 1265928288 购买【价格 ￥299】');
+}
+</script>	</div>
+	<div class="grace-rows2 grace-r">
+		<div style="line-height:2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;">
+			<h1 class="grace-h3 grace-color-green">用户关注、取消关注接口实现</h1>
+		</div>
+		<div class="grace-content" style="padding:22px 0px;">
+			<p><strong>交互原理</strong><br/></p><p>用户在关注与取消关注公众号时，微信会把这个事件推送到开发者填写的URL。方便开发者给用户下发欢迎消息或者做帐号的解绑。</p><p>微信服务器在五秒内收不到响应会断掉连接，并且重新发起请求，总共重试三次。</p><p>关于重试的消息排重，推荐使用FromUserName + CreateTime 排重。</p><p>假如服务器无法保证在五秒内处理并回复，可以直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试。</p><p>推送XML数据包示例：<br/></p><pre class="brush:xml;toolbar:false">&lt;xml&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ToUserName&gt;&lt;&nbsp;![CDATA[toUser]&nbsp;]&gt;&lt;/ToUserName&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;FromUserName&gt;&lt;&nbsp;![CDATA[FromUser]&nbsp;]&gt;&lt;/FromUserName&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgType&gt;&lt;&nbsp;![CDATA[event]&nbsp;]&gt;&lt;/MsgType&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Event&gt;&lt;&nbsp;![CDATA[subscribe]&nbsp;]&gt;&lt;/Event&gt;
+&lt;/xml&gt;</pre><p><strong>参数说明：</strong></p><table><tbody><tr class="firstRow"><td style="padding: 8px; line-height: 20px; vertical-align: top;">ToUserName</td><td style="padding: 8px; line-height: 20px; vertical-align: top;">开发者微信号</td></tr><tr><td style="padding: 8px; line-height: 20px; vertical-align: top;">FromUserName</td><td style="padding: 8px; line-height: 20px; vertical-align: top;">发送方帐号（一个OpenID）</td></tr><tr><td style="padding: 8px; line-height: 20px; vertical-align: top;">CreateTime</td><td style="padding: 8px; line-height: 20px; vertical-align: top;">消息创建时间 （整型）</td></tr><tr><td style="padding: 8px; line-height: 20px; vertical-align: top;">MsgType</td><td style="padding: 8px; line-height: 20px; vertical-align: top;">消息类型，event</td></tr><tr><td style="padding: 8px; line-height: 20px; vertical-align: top;">Event</td><td style="padding: 8px; line-height: 20px; vertical-align: top;">事件类型，subscribe(订阅)、unsubscribe(取消订阅)</td></tr></tbody></table><p><br/><strong>核心代码</strong><br/></p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;wxController&nbsp;extends&nbsp;grace{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;index(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$gracewechat&nbsp;=&nbsp;tool(&#39;graceWeChat&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//获取消息
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$gracewechat-&gt;getMsg();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//判断消息类型为&nbsp;event&nbsp;[事件]&nbsp;类型
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($gracewechat-&gt;msgType&nbsp;==&nbsp;&#39;event&#39;){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch($gracewechat-&gt;event){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//关注
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;&#39;subscribe&#39;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//获取用户信息
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$user&nbsp;=&nbsp;$gracewechat-&gt;getUser($gracewechat-&gt;openId);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$gracewechat-&gt;reTextMsg($user[&#39;nickname&#39;].&#39;您好，感谢关注&nbsp;^_^&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//您可以使用数据库记录用户信息
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//取消关注
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;&#39;unsubscribe&#39;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//取消关注代码.....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//可以在数据库内改变用户关注的状态
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}</pre><p><br/></p>		</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+var index = $('#docdl-1').index();
+$('#grace-accordion').accordion(index);
+$('#doc-menu-1-330').addClass('grace-current');
+</script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('pre').addClass('prettyprint');
+$('table').each(function(){
+	$(this).find('tr:even').find('td').css({background:'#F6F7F8'});
+});
+prettyPrint();
+$('#nav-wx').addClass('grace-current');
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : wechat, 方法 : info - 运行时间 : 10.14毫秒, 占用内存 : 26.79k");</script>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpGrace php 开源框架 - 轻快的实力派</title>
+<meta name="keywords" content="phpGrace,php框架, php frame work" />
+<meta name="description" content="phpGrace - 轻快、高效的php开源框架。" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="index.html"><img src="statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+			<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+			<li><a href="doc.html" id="nav-doc">手册</a></li>
+			<li><a href="tools.html" id="nav-tool">工具</a></li> 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="login.html">账户中心</a>
+	<a href="login.html">我的话题</a>
+	<a href="login.html">我的评论</a>
+	<a href="index.html">退出系统</a>
+</div>
+<style type="text/css">@media screen and (max-width:800px){
+	.grace-rows1{width:94%; padding:5px 2%;}
+	.grace-rows2{display:none;}
+}
+</style>
+<div class="grace-main grace-margin-top">
+	<div class="grace-rows1 grace-l">
+		<div class="grace-accordion" id="grace-accordion">
+	<dl id="docdl-0" class="grace-mobile-hide">
+		<dt>graceWechat<i class="iconfont icon-jt-down"></i></dt>
+		<dd class="grace-mobile-hide"><a href="wechat.html" id="doc-menu-0-0">graceWechat 介绍</a></dd>
+	</dl>
+	<dl id="docdl-1">
+		<dt>微信公众号常用<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="wechat/info/328-1.html" id="doc-menu-1-328">公众号开发资料</a></dd>
+		<dd><a href="wechat/info/329-1.html" id="doc-menu-1-329">快速接入公众号</a></dd>
+		<dd><a href="wechat/info/330-1.html" id="doc-menu-1-330">关注、取消关注</a></dd>
+		<dd><a href="wechat/info/331-1.html" id="doc-menu-1-331">接收、回复消息</a></dd>
+		<dd><a href="wechat/info/332-1.html" id="doc-menu-1-332">消息数据日志</a></dd>
+		<dd><a href="wechat/info/333-1.html" id="doc-menu-1-333">综合消息处理</a></dd>
+		<dd><a href="wechat/info/334-1.html" id="doc-menu-1-334">Access Token</a></dd>
+		<dd><a href="wechat/info/335-1.html" id="doc-menu-1-335">自定义菜单</a></dd>
+		<dd><a href="wechat/info/336-1.html" id="doc-menu-1-336">临时素材管理</a></dd>
+		<dd><a href="wechat/info/337-1.html" id="doc-menu-1-337">二维码生成及识别</a></dd>
+		<dd><a href="wechat/info/338-1.html" id="doc-menu-1-338">长链转短链</a></dd>
+		<dd><a href="wechat/info/339-1.html" id="doc-menu-1-339">模板消息</a></dd>
+		<dd><a href="wechat/info/340-1.html" id="doc-menu-1-340">获取用户信息</a></dd>
+	</dl>
+	<dl id="docdl-2">
+		<dt>网页开发及授权<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="wechat/info/341-2.html" id="doc-menu-2-341">前端框架推荐</a></dd>
+		<dd><a href="wechat/info/342-2.html" id="doc-menu-2-342">微信网页授权</a></dd>
+		<dd><a href="tools/info/17.html" target="_blank">微信扫码登录</a></dd>
+		<dd><a href="wechat/info/343-2.html" id="doc-menu-2-343">微信JS-SDK调用</a></dd>
+	</dl>
+	<dl id="docdl-3">
+		<dt>微信支付<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="https://pay.weixin.qq.com/wiki/doc/api/index.html" target="_blank">微信支付手册</a></dd>
+		<dd><a href="wechat/info/344-3.html" id="doc-menu-3-344">公众号内支付</a></dd>
+		<dd><a href="wechat/info/345-3.html" id="doc-menu-3-345">微信扫码支付</a></dd>
+		<dd><a href="wechat/info/346-3.html" id="doc-menu-3-346">H5+ APP支付</a></dd>
+		<dd><a href="wechat/info/347-3.html" id="doc-menu-3-347">微信小程序支付</a></dd>
+	</dl>
+	<dl id="docdl-4">
+		<dt>小程序<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="wechat/info/348-4.html" id="doc-menu-4-348">小程序code换opennid</a></dd>
+	</dl>
+</div>
+<script type="text/javascript">
+function buyGraceWechat(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	gDialog.alert('请联系客服 QQ 1265928288 购买【价格 ￥299】');
+}
+</script>	</div>
+	<div class="grace-rows2 grace-r">
+		<div style="line-height:2em;">
+			<h1 class="grace-h3 grace-color-green">graceWechat - 微信开发工具包</h1>
+		</div>
+		<div style="padding:18px 0px;">
+			<img src="http://static.phpgrace.com/statics/images/graceWechat.png" width="100%" />
+		</div>
+		<div class="grace-content" style="padding-bottom:22px;">
+			graceWechat是基于phpGrace框架研发的一套完整的微信开发工具库，包含微信公众号、小程序、h5+ app开发过程中所需的大量后端接口，接口覆盖率 90%以上。经过真实项目的严格测试，能够大幅度的提升开发速度（至少节约 5 倍开发时间），是一款非常优秀的组件库！
+		</div>
+		<div class="grace-line-title">
+			<span class="grace-color-green">组件特性</span>
+		</div>
+		<div class="grace-blocks">
+			<ul>
+				<li>
+					<div class="grace-block-title">
+						<i class="iconfont icon-mokuaiguanli"></i>接口全面
+					</div>
+					<div class="grace-block-text">
+						包含微信公众号、小程序、h5+ app开发过程中所需的大量常用后端接口，接口覆盖率 90%以上。
+					</div>
+				</li>
+				<li>
+					<div class="grace-block-title">
+						<i class="iconfont icon-language-php"></i>巨人之路
+					</div>
+					<div class="grace-block-text">
+						graceWechat是近5年微信相关产品开发经验的总结，经过大量项目的严格检验！安全、高效、更好用 ^_^
+					</div>
+				</li>
+				<li>
+					<div class="grace-block-title">
+						<i class="iconfont icon-shuju"></i>无缝接入
+					</div>
+					<div class="grace-block-text">
+						graceWechat也支持所有的php框架，简单的配置后即可开启快速开发之旅！详情见说明文档
+					</div>
+				</li>
+			</ul>
+		</div>
+		<style type="text/css">table{border-left:1px solid #D9D9D9; border-top:1px solid #D9D9D9;}
+		td, th{border-right:1px solid #D9D9D9; line-height:2.2em; padding:8px; border-bottom:1px solid #D9D9D9;}
+		th{background:#F6F6F6;}
+		</style>
+		<!-- div style="margin-top:38px; text-align:center;">
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<th width="25%">&nbsp;</th>
+					<th width="25%">基础版</th>
+					<th width="25%">支付服务版</th>
+					<th>定制服务版</th>
+				</tr>
+				<tr>
+					<td>出售价格</td>
+					<td>￥299</td>
+					<td>￥399</td>
+					<td>联系客服</td>
+				</tr>
+				<tr>
+					<td>工具升级</td>
+					<td>免费升级</td>
+					<td>免费升级</td>
+					<td>免费升级</td>
+				</tr>
+				<tr>
+					<td>相关服务</td>
+					<td>无</td>
+					<td>环境初始化服务</td>
+					<td>定制服务</td>
+				</tr>
+				<tr>
+					<td>视频教程</td>
+					<td>免费赠送</td>
+					<td>免费赠送</td>
+					<td>免费赠送</td>
+				</tr>
+			</table>
+		</div>
+		<div style="margin-top:38px; line-height:2.2em; text-align:center;">
+			说明：基础版已经涵盖所有功能接口，其他版本只是提供了人工服务，有一定代码能力的同学使用基础版本即可！<br />
+			咨询或购买产品请加 QQ 1265928288 好友 ^_^
+		</div -->
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+$('#grace-accordion').accordion(0);
+$('#doc-menu-0-0').addClass('grace-current');
+$('#nav-wx').addClass('grace-current');
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : wechat, 方法 : index - 运行时间 : 0.32毫秒, 占用内存 : 9.26k");</script>

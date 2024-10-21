@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpGrace 工具类库 - 日期时间换算类</title>
+<meta name="keywords" content="phpGrace 工具类库 - 日期时间换算类" />
+<meta name="description" content="phpGrace 工具类库 - 日期时间换算类" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">.grace-info-title{line-height:2.2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;}
+@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-l grace-rows1">
+		<div class="grace-accordion" id="grace-accordion">
+			<dl id="docdl-1">
+				<dt><span class="iconfont icon-gongju"></span> 常用工具<i class="iconfont icon-jt-down"></i></dt>
+								<dd><a href="11.html" id="doc-menu-11">图片处理类</a></dd>
+								<dd><a href="6.html" id="doc-menu-6">文件上传类</a></dd>
+								<dd><a href="3.html" id="doc-menu-3">ip地址获取类</a></dd>
+								<dd><a href="5.html" id="doc-menu-5">验证码绘制类</a></dd>
+								<dd><a href="18.html" id="doc-menu-18">日期时间换算类</a></dd>
+								<dd><a href="4.html" id="doc-menu-4">md5加密类</a></dd>
+								<dd><a href="7.html" id="doc-menu-7">服务器信息类</a></dd>
+								<dd><a href="8.html" id="doc-menu-8">curl通信类</a></dd>
+								<dd><a href="9.html" id="doc-menu-9">文件下载类</a></dd>
+								<dd><a href="13.html" id="doc-menu-13">类反射工具</a></dd>
+								<dd><a href="20.html" id="doc-menu-20">XML 生成与解析</a></dd>
+								<dd><a href="21.html" id="doc-menu-21">汉字转拼音类</a></dd>
+								<dd><a href="23.html" id="doc-menu-23">文件夹操作</a></dd>
+								<dd><a href="22.html" id="doc-menu-22">人民币大写转换类</a></dd>
+							</dl>
+			<dl id="docdl-3">
+				<dt><span class="iconfont icon-yingyongkuangjiachajian"></span>第三方类库整合<i class="iconfont icon-jt-down"></i></dt>
+								<dd><a href="14.html" id="doc-menu-14">QQ登录 - web版</a></dd>
+								<dd><a href="17.html" id="doc-menu-17">微信扫码登录-网站</a></dd>
+								<dd><a href="16.html" id="doc-menu-16">excel 读写操作</a></dd>
+								<dd><a href="15.html" id="doc-menu-15">阿里云短信接口</a></dd>
+								<dd><a href="12.html" id="doc-menu-12">SMTP 邮件发送</a></dd>
+								<dd><a href="10.html" id="doc-menu-10">二维码生成类</a></dd>
+								<dd><a href="19.html" id="doc-menu-19">word、pdf 生成类</a></dd>
+								<dd><a href="24.html" id="doc-menu-24">阿里云静态云存储接口类</a></dd>
+								<dd><a href="25.html" id="doc-menu-25">支付宝-当面付接口类</a></dd>
+							</dl>
+		</div>
+	</div>
+	<div class="grace-r grace-rows2">
+		<div class="grace-info-title">
+			<h1 class="grace-h3 grace-color-green">日期时间换算类</h1>
+		</div>
+		<div class="grace-content" style="padding:12px 0px;">
+			<p><strong>功能描述</strong><br/>日期时间换算，时间戳、时间差、过去时间计算。<br/><br/><strong>部署说明</strong><br/></p><pre class="brush:php;toolbar:false">下载&nbsp;timer.php&nbsp;部署到&nbsp;phpGrace/tools&nbsp;文件夹下。</pre><p><br/>使用说明<br/><br/></p><p><strong>当前年份 currentYear()</strong></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;currentYear();</pre><p><br/><strong>当前月份 currentMonth()</strong><br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;currentMonth();</pre><p><br/><strong>当前日期 currentDay()</strong><br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;currentDay();</pre><p><br/></p><p><strong>当前时 currentHour()</strong><br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;currentHour();</pre><p><br/><strong>当前分 currentMin()</strong><br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;currentMin();</pre><p><br/></p><p><strong>当前秒 currentSecond()</strong></p><p><span class="Apple-tab-span" style="white-space:pre"></span></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;currentSecond();</pre><p><br/></p><p><strong>按照指定格式及指定时间戳计算时间 dateTime()</strong><br/>参数：<br/></p><pre class="brush:php;toolbar:false">1、$format&nbsp;=&nbsp;&quot;Y-m-d&nbsp;H:i:s&quot;&nbsp;时间格式，可省参数&nbsp;【默认&nbsp;&quot;Y-m-d&nbsp;H:i:s&quot;】
+2、$currentTime&nbsp;=&nbsp;null&nbsp;//指定的时间戳，可省参数&nbsp;【默认当前时间】</pre><p>演示：<br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;dateTime(&#39;m/d/Y&nbsp;H:i:s&#39;).&#39;&lt;br&nbsp;/&gt;&#39;;//当前时间
+echo&nbsp;$timer-&gt;dateTime(&#39;m/d/Y&nbsp;H:i:s&#39;,&nbsp;1524624358).&#39;&lt;br&nbsp;/&gt;&#39;;&nbsp;//指定时间戳</pre><p><br/></p><p><strong>将日期时间转换时间戳 timeStamp()</strong><br/>参数：<br/></p><pre class="brush:plain;toolbar:false">日期及时间，支持的格式&nbsp;Y-m-d&nbsp;H:i:s&nbsp;或&nbsp;m/d/Y&nbsp;H:i:s</pre><p>演示：<br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;&#39;计算时间戳&nbsp;:&nbsp;&#39;.$timer-&gt;timeStamp(&#39;2018-04-24&nbsp;15:48:04&#39;).&#39;&lt;br&nbsp;/&gt;&#39;;</pre><p><br/><strong>计算日期与日期间的差值 DValue($timer1, $timer2)</strong><br/></p><p style="white-space: normal;">参数：<br/></p><pre class="brush:plain;toolbar:false">1、起始日期及时间，支持的格式&nbsp;Y-m-d&nbsp;H:i:s&nbsp;或&nbsp;m/d/Y&nbsp;H:i:s
+2、结束日期及时间，支持的格式&nbsp;Y-m-d&nbsp;H:i:s&nbsp;或&nbsp;m/d/Y&nbsp;H:i:s</pre><p>演示：<br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;&#39;计算时间差&nbsp;:&nbsp;&#39;.$timer-&gt;DValue(&#39;2018-04-25&nbsp;15:48:18&#39;,&nbsp;&#39;04/25/2018&nbsp;15:48:12&#39;);</pre><p><br/><strong>计算过去时间并格式化 fromTime($time)</strong><br/>参数：时间戳<br/>演示：<br/></p><pre class="brush:php;toolbar:false">$timer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\timer();
+echo&nbsp;$timer-&gt;fromTime($timer-&gt;timeStamp(&#39;2018-04-24&nbsp;15:48:04&#39;));</pre>	<!-- 下载地址 -->
+<strong>下载当前类库源码：</strong><br/> 
+   <a href="javascript:;">
+	<img src="../../statics/images/down.png" onclick="window.open('../../工具/日期时间换算类/timer.php')" alt="">
+   </a>	
+   <strong>mac 系统环境 可以在编辑器的tools目录下通过 Terminal 执行命令行直接下载到目录里</strong>
+   <pre>curl -O http://liukuaizhuan.gitee.io/phpgracemanual/工具/日期时间换算类/timer.php</pre>
+</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('#nav-tool').addClass('grace-current');
+$('#doc-menu-18').addClass('grace-current');
+var index = $('#doc-menu-18').parent().parent().index();
+$('#grace-accordion').accordion(index);
+$('pre').addClass('prettyprint');
+prettyPrint();
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : tools, 方法 : info - 运行时间 : 9.06毫秒, 占用内存 : 34.46k");</script>

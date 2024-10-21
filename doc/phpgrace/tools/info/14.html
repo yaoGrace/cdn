@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpGrace 工具类库 - QQ登录 - web版</title>
+<meta name="keywords" content="phpGrace 工具类库 - QQ登录 - web版" />
+<meta name="description" content="phpGrace 工具类库 - QQ登录 - web版" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">.grace-info-title{line-height:2.2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;}
+@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-l grace-rows1">
+		<div class="grace-accordion" id="grace-accordion">
+			<dl id="docdl-1">
+				<dt><span class="iconfont icon-gongju"></span> 常用工具<i class="iconfont icon-jt-down"></i></dt>
+								<dd><a href="11.html" id="doc-menu-11">图片处理类</a></dd>
+								<dd><a href="6.html" id="doc-menu-6">文件上传类</a></dd>
+								<dd><a href="3.html" id="doc-menu-3">ip地址获取类</a></dd>
+								<dd><a href="5.html" id="doc-menu-5">验证码绘制类</a></dd>
+								<dd><a href="18.html" id="doc-menu-18">日期时间换算类</a></dd>
+								<dd><a href="4.html" id="doc-menu-4">md5加密类</a></dd>
+								<dd><a href="7.html" id="doc-menu-7">服务器信息类</a></dd>
+								<dd><a href="8.html" id="doc-menu-8">curl通信类</a></dd>
+								<dd><a href="9.html" id="doc-menu-9">文件下载类</a></dd>
+								<dd><a href="13.html" id="doc-menu-13">类反射工具</a></dd>
+								<dd><a href="20.html" id="doc-menu-20">XML 生成与解析</a></dd>
+								<dd><a href="21.html" id="doc-menu-21">汉字转拼音类</a></dd>
+								<dd><a href="23.html" id="doc-menu-23">文件夹操作</a></dd>
+								<dd><a href="22.html" id="doc-menu-22">人民币大写转换类</a></dd>
+							</dl>
+			<dl id="docdl-3">
+				<dt><span class="iconfont icon-yingyongkuangjiachajian"></span>第三方类库整合<i class="iconfont icon-jt-down"></i></dt>
+								<dd><a href="14.html" id="doc-menu-14">QQ登录 - web版</a></dd>
+								<dd><a href="17.html" id="doc-menu-17">微信扫码登录-网站</a></dd>
+								<dd><a href="16.html" id="doc-menu-16">excel 读写操作</a></dd>
+								<dd><a href="15.html" id="doc-menu-15">阿里云短信接口</a></dd>
+								<dd><a href="12.html" id="doc-menu-12">SMTP 邮件发送</a></dd>
+								<dd><a href="10.html" id="doc-menu-10">二维码生成类</a></dd>
+								<dd><a href="19.html" id="doc-menu-19">word、pdf 生成类</a></dd>
+								<dd><a href="24.html" id="doc-menu-24">阿里云静态云存储接口类</a></dd>
+								<dd><a href="25.html" id="doc-menu-25">支付宝-当面付接口类</a></dd>
+							</dl>
+		</div>
+	</div>
+	<div class="grace-r grace-rows2">
+		<div class="grace-info-title">
+			<h1 class="grace-h3 grace-color-green">QQ登录 - web版</h1>
+		</div>
+		<div class="grace-content" style="padding:12px 0px;">
+			<p><strong>功能描述</strong><br/>网站第三方登录 - qq登录组件，整合为一个类文件，通过简单的配置即可完成复杂的登录功能。<br/><br/><strong>申请开通QQ互联</strong><br/>网址 :&nbsp;<a href="https://connect.qq.com" target="_blank">https://connect.qq.com</a><br/>打开网址后登录QQ互联，点击“创建应用按钮”，按照步骤填写并提交应用：<br/><img src="../../statics/images/201804/1524455603157617.png" title="1524455434227522.png" alt="未命名-4.png"/><br/><strong>部署说明</strong><br/></p><pre class="brush:php;toolbar:false">下载&nbsp;webQQLogin.php&nbsp;部署到&nbsp;phpGrace/tools&nbsp;文件夹下。</pre><p><br/><strong>数据结构</strong><br/>创建 pg_members.sql 数据表。<br/></p><pre class="brush:php;toolbar:false">DROP&nbsp;TABLE&nbsp;IF&nbsp;EXISTS&nbsp;`pg_members`;
+CREATE&nbsp;TABLE&nbsp;`pg_members`&nbsp;(
+&nbsp;&nbsp;`u_id`&nbsp;int(11)&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT&nbsp;COMMENT&nbsp;&#39;ID&#39;,
+&nbsp;&nbsp;`u_username`&nbsp;varchar(50)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;用户名&#39;,
+&nbsp;&nbsp;`u_openid_qq`&nbsp;varchar(100)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;openid-qq&#39;,
+&nbsp;&nbsp;`u_unionid_qq`&nbsp;varchar(100)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;unionid-qq&#39;,
+&nbsp;&nbsp;`u_phone`&nbsp;varchar(20)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;手机号&#39;,
+&nbsp;&nbsp;`u_pwd`&nbsp;varchar(50)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;密码&#39;,
+&nbsp;&nbsp;`u_name`&nbsp;varchar(20)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;称呼&#39;,
+&nbsp;&nbsp;`u_face`&nbsp;varchar(200)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;头像地址&#39;,
+&nbsp;&nbsp;`u_gender`&nbsp;varchar(20)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;性别&#39;,
+&nbsp;&nbsp;`u_status`&nbsp;tinyint(4)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;状态&#39;,
+&nbsp;&nbsp;`u_regtime`&nbsp;bigint(13)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;注册时间&#39;,
+&nbsp;&nbsp;`u_logintime`&nbsp;bigint(13)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;登陆时间&#39;,
+&nbsp;&nbsp;`u_randnum`&nbsp;varchar(50)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;随机码&#39;,
+&nbsp;&nbsp;`u_ip`&nbsp;varchar(20)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;登陆IP&#39;,
+&nbsp;&nbsp;`u_msgcode`&nbsp;varchar(10)&nbsp;DEFAULT&nbsp;NULL&nbsp;COMMENT&nbsp;&#39;短信验证码&#39;,
+&nbsp;&nbsp;PRIMARY&nbsp;KEY&nbsp;(`u_id`),
+&nbsp;&nbsp;UNIQUE&nbsp;KEY&nbsp;`u_unionid_qq`&nbsp;(`u_unionid_qq`),
+&nbsp;&nbsp;UNIQUE&nbsp;KEY&nbsp;`u_username`&nbsp;(`u_username`),
+&nbsp;&nbsp;UNIQUE&nbsp;KEY&nbsp;`u_phone`&nbsp;(`u_phone`)&nbsp;USING&nbsp;BTREE,
+&nbsp;&nbsp;UNIQUE&nbsp;KEY&nbsp;`u_openid_qq`&nbsp;(`u_openid_qq`)&nbsp;USING&nbsp;BTREE
+)&nbsp;ENGINE=InnoDB&nbsp;AUTO_INCREMENT=100000&nbsp;DEFAULT&nbsp;CHARSET=utf8&nbsp;ROW_FORMAT=DYNAMIC;</pre><p><br/><strong>类文件配置</strong><br/></p><pre class="brush:php;toolbar:false">打开&nbsp;webQQLogin.php&nbsp;
+1、正确填写&nbsp;appId&nbsp;和&nbsp;appKey&nbsp;（QQ互联管理中心点开应用获取）
+2、填写回调地址&nbsp;redirectUri，如:&nbsp;http://www.phpGrace.com/qqLogin/bac</pre><p><br/><strong>登录接口使用【 注意在入口页开启 session 】</strong><br/>在视图中添加一个链接，链接到控制器 qqLogin，代码如下：<br/></p><pre class="brush:php;toolbar:false">&lt;?php
+//核心登录&nbsp;session&nbsp;名称&nbsp;graceUid，请根据项目需求自行修改。
+class&nbsp;qqLoginController&nbsp;extends&nbsp;grace{
+	
+	private&nbsp;$qqLoginer;
+	
+	public&nbsp;function&nbsp;__init(){
+		parent::__init();
+		//检查是否已经登录
+		if(!empty($_SESSION[&#39;graceUid&#39;])){header(&#39;location:/&#39;);&nbsp;exit;}
+		//实例化&nbsp;qq&nbsp;登录对象
+		$this-&gt;qqLoginer&nbsp;=&nbsp;new&nbsp;phpGrace\tools\webQQLogin();
+	}
+	
+	//发起登录
+	public&nbsp;function&nbsp;index(){
+		$this-&gt;qqLoginer-&gt;login();
+	}
+	
+	//返回接口
+	public&nbsp;function&nbsp;back(){
+		//GET&nbsp;参数检查、&nbsp;验证码比对
+		$res&nbsp;=&nbsp;$this-&gt;qqLoginer-&gt;checkBack();
+		if(!$res){exit($this-&gt;qqLoginer-&gt;error);}
+		//获取用户信息
+		$user&nbsp;=&nbsp;$this-&gt;qqLoginer-&gt;getUserInfo();
+		//连接数据比对用户
+		$dbMember&nbsp;=&nbsp;db(&#39;members&#39;);
+		$member&nbsp;&nbsp;&nbsp;=&nbsp;$dbMember-&gt;where(&#39;u_openid_qq&nbsp;=&nbsp;?&#39;,&nbsp;array($this-&gt;qqLoginer-&gt;openId))-&gt;fetch();
+		//用户数据不存在&nbsp;[&nbsp;第一次登录&nbsp;]
+		if(empty($member)){
+			$preAddData&nbsp;=&nbsp;array();
+			$preAddData[&#39;u_openid_qq&#39;]&nbsp;=&nbsp;$this-&gt;qqLoginer-&gt;openId;
+			$preAddData[&#39;u_nickname&#39;]&nbsp;&nbsp;=&nbsp;$user[&#39;nickname&#39;];
+			$preAddData[&#39;u_face&#39;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;empty($user[&#39;figureurl_qq_2&#39;])&nbsp;?&nbsp;$user[&#39;figureurl_qq_1&#39;]&nbsp;:&nbsp;$user[&#39;figureurl_qq_2&#39;];
+			$preAddData[&#39;u_gender&#39;]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;$user[&#39;gender&#39;];
+			$preAddData[&#39;u_status&#39;]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1;
+			$preAddData[&#39;u_regtime&#39;]&nbsp;&nbsp;&nbsp;=&nbsp;time();
+			$preAddData[&#39;u_logintime&#39;]&nbsp;=&nbsp;time();
+			$preAddData[&#39;u_ip&#39;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;phpGrace\tools\ip::getIp();
+			$uid&nbsp;=&nbsp;$dbMember-&gt;add($preAddData);
+			if($uid){
+				//记录&nbsp;session&nbsp;
+				setSession(&#39;graceUid&#39;,&nbsp;$uid);
+				setSession(&#39;graceNickName&#39;,&nbsp;$user[&#39;nickname&#39;]);
+			}else{
+				exit(&#39;服务器忙，请返回重试&#39;);
+			}
+		}
+		//用户已经存在
+		else{
+			$preUpdateData&nbsp;=&nbsp;array();
+			$preUpdateData[&#39;u_logintime&#39;]&nbsp;=&nbsp;time();
+			$preUpdateData[&#39;u_ip&#39;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;phpGrace\tools\ip::getIp();
+			$dbMember-&gt;where(&#39;u_id&nbsp;=&nbsp;?&#39;,&nbsp;array($member[&#39;u_id&#39;]))-&gt;update($preUpdateData);
+			//记录&nbsp;session&nbsp;
+			setSession(&#39;graceUid&#39;,&nbsp;$member[&#39;u_id&#39;]);
+			setSession(&#39;graceNickName&#39;,&nbsp;$user[&#39;nickname&#39;]);
+		}
+		//登录后跳转回首页，可以根据项目需求改写跳转
+		header(&#39;location:/&#39;);
+	}
+}</pre>	
+<!-- 下载地址 -->
+<strong>下载当前类库源码：</strong><br/> 
+<a href="javascript:;">
+	<img src="../../statics/images/down.png" onclick="window.open('../../工具/QQ登录-web版/webQQLogin.php')" alt="">
+   </a>	
+   <strong>mac 系统环境 可以在编辑器的tools目录下通过 Terminal 执行命令行直接下载到目录里</strong>
+   <pre>curl -O http://liukuaizhuan.gitee.io/phpgracemanual/工具/QQ登录-web版/webQQLogin.php</pre>
+	</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('#nav-tool').addClass('grace-current');
+$('#doc-menu-14').addClass('grace-current');
+var index = $('#doc-menu-14').parent().parent().index();
+$('#grace-accordion').accordion(index);
+$('pre').addClass('prettyprint');
+prettyPrint();
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : tools, 方法 : info - 运行时间 : 7.85毫秒, 占用内存 : 38.46k");</script>

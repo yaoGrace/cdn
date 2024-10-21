@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>获取用户信息</title>
+<meta name="keywords" content="获取用户信息" />
+<meta name="description" content="获取用户信息" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../statics/grace20200720.css" />
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_611166_2ypi64205d6.css" />
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../statics/grace.js"></script>
+</head>
+<body>
+<div class="grace-header">
+	<div class="grace-main">
+		<div class="grace-logo">
+			<a href="../../index.html"><img src="../../statics/images/logo.png" /></a>
+		</div>
+		<ul class="grace-nav" id="grace-nav">
+								<li><a href="javascript:;" onclick="showDownLoad()">下载</a></li>
+								<li><a href="../../doc.html" id="nav-doc">手册</a></li>
+			<li><a href="../../tools.html" id="nav-tool">工具</a></li>
+			 
+		</ul>
+	</div>
+	<div class="grace-menu" id="grace-menu"><i class="iconfont icon-menu"></i></div>
+</div>
+<div class="grace-header-line"></div>
+<div class="grace-slide-menu" id="slide-menu-account">
+	<a href="../../login.html">账户中心</a>
+	<a href="../../login.html">我的话题</a>
+	<a href="../../login.html">我的评论</a>
+	<a href="../../index.html">退出系统</a>
+</div>
+<style type="text/css">@media screen and (max-width:800px){
+	.grace-rows1{display:none;}
+	.grace-rows2{width:94%; padding:5px 2%;}
+}
+</style>
+<div class="grace-line-banner"></div>
+<div class="grace-main grace-margin-top">
+	<div class="grace-rows1 grace-l">
+		<div class="grace-accordion" id="grace-accordion">
+	<dl id="docdl-0" class="grace-mobile-hide">
+		<dt>graceWechat<i class="iconfont icon-jt-down"></i></dt>
+		<dd class="grace-mobile-hide"><a href="../../wechat.html" id="doc-menu-0-0">graceWechat 介绍</a></dd>
+	</dl>
+	<dl id="docdl-1">
+		<dt>微信公众号常用<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="328-1.html" id="doc-menu-1-328">公众号开发资料</a></dd>
+		<dd><a href="329-1.html" id="doc-menu-1-329">快速接入公众号</a></dd>
+		<dd><a href="330-1.html" id="doc-menu-1-330">关注、取消关注</a></dd>
+		<dd><a href="331-1.html" id="doc-menu-1-331">接收、回复消息</a></dd>
+		<dd><a href="332-1.html" id="doc-menu-1-332">消息数据日志</a></dd>
+		<dd><a href="333-1.html" id="doc-menu-1-333">综合消息处理</a></dd>
+		<dd><a href="334-1.html" id="doc-menu-1-334">Access Token</a></dd>
+		<dd><a href="335-1.html" id="doc-menu-1-335">自定义菜单</a></dd>
+		<dd><a href="336-1.html" id="doc-menu-1-336">临时素材管理</a></dd>
+		<dd><a href="337-1.html" id="doc-menu-1-337">二维码生成及识别</a></dd>
+		<dd><a href="338-1.html" id="doc-menu-1-338">长链转短链</a></dd>
+		<dd><a href="339-1.html" id="doc-menu-1-339">模板消息</a></dd>
+		<dd><a href="340-1.html" id="doc-menu-1-340">获取用户信息</a></dd>
+	</dl>
+	<dl id="docdl-2">
+		<dt>网页开发及授权<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="341-2.html" id="doc-menu-2-341">前端框架推荐</a></dd>
+		<dd><a href="342-2.html" id="doc-menu-2-342">微信网页授权</a></dd>
+		<dd><a href="../../tools/info/17.html" target="_blank">微信扫码登录</a></dd>
+		<dd><a href="343-2.html" id="doc-menu-2-343">微信JS-SDK调用</a></dd>
+	</dl>
+	<dl id="docdl-3">
+		<dt>微信支付<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="https://pay.weixin.qq.com/wiki/doc/api/index.html" target="_blank">微信支付手册</a></dd>
+		<dd><a href="344-3.html" id="doc-menu-3-344">公众号内支付</a></dd>
+		<dd><a href="345-3.html" id="doc-menu-3-345">微信扫码支付</a></dd>
+		<dd><a href="346-3.html" id="doc-menu-3-346">H5+ APP支付</a></dd>
+		<dd><a href="347-3.html" id="doc-menu-3-347">微信小程序支付</a></dd>
+	</dl>
+	<dl id="docdl-4">
+		<dt>小程序<i class="iconfont icon-jt-down"></i></dt>
+		<dd><a href="348-4.html" id="doc-menu-4-348">小程序code换opennid</a></dd>
+	</dl>
+</div>
+<script type="text/javascript">
+function buyGraceWechat(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	gDialog.alert('请联系客服 QQ 1265928288 购买【价格 ￥299】');
+}
+</script>	</div>
+	<div class="grace-rows2 grace-r">
+		<div style="line-height:2em; border-bottom:1px solid #F6F6F6; padding-bottom:12px;">
+			<h1 class="grace-h3 grace-color-green">获取用户信息</h1>
+		</div>
+		<div class="grace-content" style="padding:22px 0px;">
+			<p><strong>利用openid获取用户信息 $gracewechat-&gt;getUser($openid)</strong></p><p>开发者可通过OpenID来获取用户基本信息，方法：$hcWeChat-&gt;getUser($openid)；</p><p>获取到用户信息的格式：</p><pre class="brush:php;toolbar:false">{
+&nbsp;&nbsp;&nbsp;&quot;subscribe&quot;:&nbsp;1,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;openid&quot;:&nbsp;&quot;o6_bmjrPTlm6_2sgVt7hMZOPfL2M&quot;,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;nickname&quot;:&nbsp;&quot;Band&quot;,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;sex&quot;:&nbsp;1,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;language&quot;:&nbsp;&quot;zh_CN&quot;,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;city&quot;:&nbsp;&quot;广州&quot;,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;province&quot;:&nbsp;&quot;广东&quot;,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;country&quot;:&nbsp;&quot;中国&quot;,&nbsp;
+&nbsp;&nbsp;&nbsp;&quot;headimgurl&quot;:&nbsp;&nbsp;&quot;http://wx.qlogo.cn/mmopen/g3M....&quot;,
+&nbsp;&nbsp;&nbsp;&quot;subscribe_time&quot;:&nbsp;1382694957,
+&nbsp;&nbsp;&nbsp;&quot;unionid&quot;:&nbsp;&quot;&nbsp;o6_bmasdasdsad6_2sgVt7hMZOPfL&quot;
+&nbsp;&nbsp;&nbsp;&quot;remark&quot;:&nbsp;&quot;&quot;,
+&nbsp;&nbsp;&nbsp;&quot;groupid&quot;:&nbsp;0,
+&nbsp;&nbsp;&nbsp;&quot;tagid_list&quot;:[128,2]
+}</pre><p>$gracewechat-&gt;getUser($openid) 函数获取用户相信后会将信息由XML转换为数组格式。<br/><br/><strong>演示代码</strong><br/></p><pre class="brush:php;toolbar:false">$gracewechat&nbsp;=&nbsp;tool(&#39;graceWeChat&#39;);
+$user&nbsp;=&nbsp;$gracewechat-&gt;getUser(&#39;op15jsy7D14d8BAvDTTLTdumuz_0I&#39;);
+if(!$user){echo&nbsp;$gracewechat-&gt;error;}
+p($user,&nbsp;2);</pre><p><strong><br/>重要说明</strong></p><p>1、获取失败会终止返回 false ，并使用 error 属性保存字符串形式的错误信息，如：</p><pre class="brush:plain;toolbar:false">$res&nbsp;=&nbsp;$gracewechat-&gt;getUser(&#39;o8ZMY1WivtAPlDNjnC7tD006jes11M&#39;);
+if(!$res){echo&nbsp;$gracewechat-&gt;error;}</pre><p>2、用户未关注公众号返回用户信息：</p><pre class="brush:php;toolbar:false">Array&nbsp;(&nbsp;[subscribe]&nbsp;=&gt;&nbsp;0&nbsp;[openid]&nbsp;=&gt;&nbsp;o8ZMY1WivtAPlDNjnC7tD006jesM&nbsp;[tagid_list]&nbsp;=&gt;&nbsp;Array&nbsp;(&nbsp;)&nbsp;)</pre><p>可以利用返回数组的 subscribe 属性值判断用户是否关注，关注 subscribe 值为 1。<br/><br/><strong>获取用户列表</strong><br/>公众号可通过本接口来获取帐号的关注者列表，关注者列表由一串OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。<br/>一次拉取调用最多拉取10000个关注者的OpenID，可以通过多次拉取的方式来满足需求。<br/></p><p>正确时返回JSON数据包：</p><pre class="brush:php;toolbar:false">{&quot;total&quot;:2,
+&quot;count&quot;:2,
+&quot;data&quot;:{
+&quot;openid&quot;:[&quot;OPENID1&quot;,&quot;OPENID2&quot;]},
+&quot;next_openid&quot;:&quot;NEXT_OPENID&quot;
+}</pre><pre class="brush:php;toolbar:false">参数说明
+total关注该公众账号的总用户数
+count拉取的OPENID个数，最大值为10000
+data列表数据，OPENID的列表
+next_openid拉取列表的最后一个用户的OPENID</pre><p>错误时返回JSON数据包（示例为无效AppID错误）：</p><pre class="brush:php;toolbar:false">{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid&nbsp;appid&quot;}</pre><p>附：关注者数量超过10000时</p><p>当公众号关注者数量超过10000时，可通过填写next_openid的值，从而多次拉取列表的方式来满足需求。<br/></p><p>具体而言，就是在调用接口时，将上一次调用得到的返回中的next_openid值，作为下一次调用中的next_openid值。<br/><br/><strong>演示代码</strong><br/></p><pre class="brush:php;toolbar:false">$gracewechat&nbsp;=&nbsp;tool(&#39;graceWeChat&#39;);
+$users&nbsp;=&nbsp;$gracewechat-&gt;getUserList();</pre>		</div>
+	</div>
+</div>
+<div class="grace-footer-line"></div>
+<div class="grace-footer">
+	phpGrace 轻快的实力派！&nbsp;&nbsp;
+	<br/>
+</div>
+<script type="text/javascript">
+function showDownLoad(){
+	var gDialog = new graceDialog();
+	gDialog.buttons = ['关闭', '知道了'];
+	var msg = '<a href="https://gitee.com/liukuaizhuan/phpgrace" target="_blank" style="color:#5FB878; font-weight:700;"> 请点击这里去 gitee 下载 phpGrace ^_^</a>'+
+			"<br /> 有gitee 账户的同学<br />请给我们一个星星作为鼓励谢谢 ^_^<br />" ;
+	gDialog.alert(msg);
+}
+$('#grace-menu').click(function(){
+	var nav = $('#grace-nav');
+	if(nav.is(':hidden')){nav.slideDown(100);}else{nav.slideUp(100);}
+});
+//百度统计
+//粘贴代码
+</script><script type="text/javascript">
+var index = $('#docdl-1').index();
+$('#grace-accordion').accordion(index);
+$('#doc-menu-1-340').addClass('grace-current');
+</script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript">
+$('pre').addClass('prettyprint');
+$('table').each(function(){
+	$(this).find('tr:even').find('td').css({background:'#F6F7F8'});
+});
+prettyPrint();
+$('#nav-wx').addClass('grace-current');
+</script>
+</body>
+</html><script>console.log("phpGrace Log : 控制器 : wechat, 方法 : info - 运行时间 : 7.9毫秒, 占用内存 : 22.74k");</script>
